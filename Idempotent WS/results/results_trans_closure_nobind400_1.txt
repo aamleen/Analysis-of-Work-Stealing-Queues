@@ -1,0 +1,23 @@
+
+-----
+mkdir timedrun fake
+
+-----
+---------HCLIB_RUNTIME_INFO-----------
+>>> HCLIB_WORKERS	= 20
+>>> HCLIB_HPT_FILE	= (null)
+>>> HCLIB_BIND_THREADS	= false
+>>> HCLIB_STATS		= 1
+----------------------------------------
+Using 20 worker threads (including main thread)
+Launched hclib
+Starting Transitive Closure (400)..
+Transitive closure matrix is 
+Done
+Kernel__Energy___ -->  28.717346
+============================ MMTk Statistics Totals ============================
+time.kernel	totalPush	totalSteals	tWork	tSearch	tIdle
+266.920	158802	19964	4.18	93.03	2.79
+Total time: 269.735 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== TEST PASSED in 269.735 msec =====
