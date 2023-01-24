@@ -38,4 +38,4 @@ dlopen=''
 dlpreopen=''
 
 # Directory that this library needs to be installed in:
-libdir='/mnt/hdd2/home/aamleen2022/Original/hclib-iiitd/hclib-install/lib'
+libdir='/mnt/hdd2/home/aamleen2022/FenceFree_Deq/hclib-install/lib'

@@ -33,17 +33,24 @@ int deque_push(deque_t *deq, hclib_task_t *entry) {
  * the steal protocol
  */
 hclib_task_t *deque_steal(deque_t *deq) {
-    int delta = 22; //Store buffer/2
+    int delta = 1; //Store buffer/2
     int head;
     int tail;
+    int thiefid = rand();
+    //prinntf("Stealing \n");
     while(true){
         head = deq->head;
         tail = deq->tail;
-        if (head>tail || head==tail)
+        if (head>tail || head==tail){
+            //prinntf("\nHead>Tail by %d thief",thiefid);
             return NULL;
-        if(tail-delta< head || tail-delta==head)
+        }
+        /* if(tail-delta< head || tail-delta==head){
+            //prinntf("\n---> delta+Head>Tail by %d thief",thiefid);
             return NULL;
+        } */
         hclib_task_t *t = deq->data[head % INIT_DEQUE_CAPACITY];
+        //prinntf("Task stolen by %d thief\n",thiefid);
         if (! _hclib_atomic_cas_acq_rel(&deq->head, head, head+1))
             continue;
         return t;
@@ -56,7 +63,7 @@ hclib_task_t *deque_steal(deque_t *deq) {
 hclib_task_t *deque_pop(deque_t *deq) {
     int tail = deq->tail - 1;
     deq->tail = tail;
-    int head = deq->head;
+    int head = _hclib_atomic_load_relaxed(&deq->head);
 
     if(tail>head){
         //Thief will observe t and will not try to steal task t
