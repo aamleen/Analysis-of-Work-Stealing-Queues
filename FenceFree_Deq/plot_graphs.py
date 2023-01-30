@@ -101,7 +101,7 @@ def plotting(hclib, design, y_axis, l=0, r=len(delta)):
     print(delta[l:r])
     print(y_axis[l:r])
     print("--------------------------------------------\n")
-    plt.plot(delta,y_axis, design, alpha=1/3)
+    plt.plot(delta[l:r],y_axis[l:r], design, alpha=1/3)
     
 """ def set_plot_save(title, ylab, FF_yaxis, hclib_yaxis):
     set_plot(title,ylab)
