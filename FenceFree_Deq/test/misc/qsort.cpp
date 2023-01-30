@@ -74,7 +74,7 @@ void sort(ELEMENT_T* data, int left, int right, ELEMENT_T threshold) {
 
 int main(int argc, char **argv) {
 	hclib::launch([=]() {
-        int N = argc>1 ? atoi(argv[1]) : 10000000; // 1 million
+        int N = argc>1 ? atoi(argv[1]) : 100000000; // 1 million
             int threshold = argc>2 ? atoi(argv[2]) : (int)(0.001*N);
         printf("Sorting %d size array with threshold of %d\n",N,threshold);
         ELEMENT_T* data = new ELEMENT_T[N];
