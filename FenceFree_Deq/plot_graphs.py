@@ -2,6 +2,7 @@ import sys
 import matplotlib
 matplotlib.use('Agg')
 from matplotlib import pyplot as plt
+import statistics
 """ %matplotlib inline
 import pylab as plt """
 
@@ -55,6 +56,23 @@ def readfile(fd):
         index+=1
 
 div_factor=5
+
+def calculate_mode():
+    F_Kernel_time.append(statistics.mode(Kernel_time))
+    F_totalSteal.append(statistics.mode(totalSteal))
+    steal_rat= (statistics.mode(totalSteal)/statistics.mode(totalPush))*100.0
+    F_ratio.append(steal_rat)
+    F_totalPush.append(statistics.mode(totalPush))
+    reset_vals_temp()
+
+def calculate_median():
+    F_Kernel_time.append(statistics.median(Kernel_time))
+    F_totalSteal.append(statistics.median(totalSteal))
+    steal_rat= (statistics.median(totalSteal)/statistics.median(totalPush))*100.0
+    F_ratio.append(steal_rat)
+    F_totalPush.append(statistics.median(totalPush))
+    reset_vals_temp()
+
 def calculate_avg(delta):
     avg_kernel_time=sum(Kernel_time)/div_factor
     avg_totalSteal=int(sum(totalSteal))/div_factor
@@ -77,7 +95,7 @@ def open_file(file_name):
             fd= open(filename, 'r')
             readfile(fd)
             fd.close
-        calculate_avg(j)
+        calculate_median()
 
 def Hclib_openFile(file_name):
     for i in range(1,6):
@@ -85,7 +103,7 @@ def Hclib_openFile(file_name):
         fd= open(filename, 'r')
         readfile(fd)
         fd.close
-    calculate_avg(0)
+    calculate_median()
 
 def set_plot(title,ylab):
     ax=plt.axes()
@@ -107,13 +125,13 @@ def plotting(hclib, design, y_axis, l=0, r=len(delta)):
     set_plot(title,ylab)
     plotting(0, 'm^--', FF_yaxis)
     plotting(1, 'bo--', hclib_yaxis)
-    plot_name='Graphs/{0}_{1}_Time'.format()
+    plot_name='Graphs/median/{0}_{1}_Time'.format()
     plt.savefig(plot_name)
 
     set_plot(title,ylab)
     plotting(0, 'm^--', FF_yaxis,0,10)
     plotting(1, 'bo--', hclib_yaxis,0,10)
-    plt.savefig('Graphs/{0}_{1}_Time_Zoom') """
+    plt.savefig('Graphs/median/{0}_{1}_Time_Zoom') """
 
 FF_filename= "results/FF_"+benchmark_name+"_"+benchmark_param+"_"  #FF_fib_40_delta_1
 open_file(FF_filename)
@@ -134,8 +152,7 @@ set_plot(title,ylab)
 plotting(0, 'm^--', FF_time)
 plotting(1, 'bo--', F_Kernel_time)
 plt.legend(['Fence Free Deq','HCLib Deque'])
-plot_name='Graphs/{0}_{1}_Time.png'.format(benchmark_name,benchmark_param)
-plot_name='Graphs/{0}_{1}_Time'.format(benchmark_name,benchmark_param)
+plot_name='Graphs/median/{0}_{1}_Time'.format(benchmark_name,benchmark_param)
 plt.savefig(plot_name)
 plt.close(fig)
 
@@ -144,7 +161,7 @@ set_plot(title,ylab)
 plotting(0, 'm^--', FF_time,0,10)
 plotting(1, 'bo--', F_Kernel_time,0,10)
 plt.legend(['Fence Free Deq','HCLib Deque'])
-plot_name='Graphs/{0}_{1}_Time_Zoom.png'.format(benchmark_name,benchmark_param)
+plot_name='Graphs/median/{0}_{1}_Time_Zoom.png'.format(benchmark_name,benchmark_param)
 plt.savefig(plot_name)
 plt.close(fig)
 
@@ -156,7 +173,7 @@ set_plot(title,ylab)
 plotting(0, 'm^--', FF_ratio)
 plotting(1, 'bo--', F_ratio)
 plt.legend(['Fence Free Deq','HCLib Deque'])
-plot_name='Graphs/{0}_{1}_Steal.png'.format(benchmark_name,benchmark_param)
+plot_name='Graphs/median/{0}_{1}_Steal.png'.format(benchmark_name,benchmark_param)
 plt.savefig(plot_name)
 plt.close(fig)
 
@@ -165,6 +182,7 @@ set_plot(title,ylab)
 plotting(0, 'm^--', FF_ratio,0,10)
 plotting(1, 'bo--', F_ratio, 0, 10)
 plt.legend(['Fence Free Deq','HCLib Deque'])
-plot_name='Graphs/{0}_{1}_Steal_Zoom.png'.format(benchmark_name,benchmark_param)
+plot_name='Graphs/median/{0}_{1}_Steal_Zoom.png'.format(benchmark_name,benchmark_param)
 plt.savefig(plot_name)
 plt.close(fig)
+print("Plotted to Graphs/median/")

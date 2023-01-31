@@ -17,7 +17,7 @@
 #include "hclib-internal.h"
 #include "hclib-atomics.h"
 
-#define delta -1
+#define delta -7
 /*
  * push an entry onto the tail of the deque
  */

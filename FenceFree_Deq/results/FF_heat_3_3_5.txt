@@ -27,7 +27,7 @@ Heat
          nt          = 100
 ============================ MMTk Statistics Totals ============================
 time.kernel	totalPush	totalSteals	tWork	tSearch	tIdle
-142.025	204600	7106	95.54	4.46	0.00
-Total time: 157.435 ms
+144.972	204600	7271	95.55	4.44	0.00
+Total time: 159.666 ms
 ------------------------------ End MMTk Statistics -----------------------------
-===== TEST PASSED in 157.435 msec =====
+===== TEST PASSED in 159.666 msec =====

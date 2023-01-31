@@ -12,11 +12,11 @@ WARNING: HCLIB_BIND_THREADS assign cores in round robin. E.g., setting HCLIB_WOR
 ----------------------------------------
 Using 20 worker threads (including main thread)
 HCLIB_INFO: Round Robin Thread Binding
-Starting Fib(40)..
-Fib(40) = 102334155
+Starting Fib(42)..
+Fib(42) = 267914296
 ============================ MMTk Statistics Totals ============================
 time.kernel	totalPush	totalSteals	tWork	tSearch	tIdle
-110.569	2178308	9375	99.61	0.30	0.09
-Total time: 111.307 ms
+262.219	5702886	21351	99.74	0.24	0.02
+Total time: 262.981 ms
 ------------------------------ End MMTk Statistics -----------------------------
-===== TEST PASSED in 111.307 msec =====
+===== TEST PASSED in 262.981 msec =====

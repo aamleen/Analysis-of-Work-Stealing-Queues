@@ -1,6 +1,6 @@
-delta=( $(seq -1 20 ) )
-benchmarks=("fib" "heat" "matmul" "qsort")
-param=(42 3 1024 100000000)
+delta=( $(seq -7 4 ) )
+benchmarks=("fib" "heat")
+param=(42 3)
 for j in ${!benchmarks[@]}
 do
     python3 plot_graphs.py ${benchmarks[$j]} ${param[$j]} ${delta[@]}

@@ -9,8 +9,8 @@ cd ../test/misc
 ./run_script.sh
 clear
 # truncate the file
-benchmarks=("fib" "heat" "matmul" "qsort")
-param=(42 3 1024 100000000)
+benchmarks=("fib" "heat")
+param=(42 3)
 counter=0
 for j in ${!benchmarks[@]}
 do
@@ -21,5 +21,6 @@ do
     do
         > /mnt/hdd2/home/aamleen2022/FenceFree_Deq/results/FF_${test}_${param_j}_${delta}_${i}.txt
         HCLIB_WORKERS=20 HCLIB_BIND_THREADS=true HCLIB_STATS=1 ./${test} ${param_j} >> /mnt/hdd2/home/aamleen2022/FenceFree_Deq/results/FF_${test}_${param_j}_${delta}_${i}.txt
+        sleep 0.2
     done
 done
