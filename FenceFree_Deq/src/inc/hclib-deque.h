@@ -30,6 +30,7 @@ typedef struct deque_t {
     _Atomic int head;
     _Atomic int tail;
     hclib_task_t* data[INIT_DEQUE_CAPACITY];
+    _Atomic int counter;
 } deque_t;
 
 int deque_push(deque_t *deq, hclib_task_t *entry);

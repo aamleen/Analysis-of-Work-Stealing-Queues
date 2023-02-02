@@ -64,7 +64,11 @@ libhclib_la-hclib-deque.lo: ../../src/hclib-deque.c \
  /usr/include/x86_64-linux-gnu/bits/mman-linux.h \
  /usr/include/x86_64-linux-gnu/bits/mman-shared.h \
  ../../src/inc/hclib-finish.h ../../inc/hclib-promise.h \
- ../../src/inc/hclib-atomics.h
+ ../../src/inc/hclib-atomics.h /usr/include/unistd.h \
+ /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+ /usr/include/x86_64-linux-gnu/bits/confname.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd_ext.h
 
 /usr/include/stdc-predef.h:
 
@@ -235,3 +239,13 @@ libhclib_la-hclib-deque.lo: ../../src/hclib-deque.c \
 ../../inc/hclib-promise.h:
 
 ../../src/inc/hclib-atomics.h:
+
+/usr/include/unistd.h:
+
+/usr/include/x86_64-linux-gnu/bits/posix_opt.h:
+
+/usr/include/x86_64-linux-gnu/bits/confname.h:
+
+/usr/include/x86_64-linux-gnu/bits/unistd.h:
+
+/usr/include/x86_64-linux-gnu/bits/unistd_ext.h:

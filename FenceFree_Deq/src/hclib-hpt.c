@@ -234,6 +234,7 @@ inline hclib_task_t *deque_pop_place(hclib_worker_state *ws, place_t *pl) {
  */
 inline void init_hc_deque_t(hc_deque_t *hcdeq, place_t *pl) {
     hcdeq->deque.head = hcdeq->deque.tail = 0;
+    hcdeq->deque.counter = 0;
     hcdeq->pl = pl;
     hcdeq->ws = NULL;
     hcdeq->nnext = NULL;

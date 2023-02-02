@@ -448,7 +448,6 @@ static void forasync_internal(void *user_fct_ptr, void *user_arg,
     user_def->args = user_arg;
     user_def->future_list = NULL;
     user_def->place = NULL;
-
     HASSERT(dim>0 && dim<4);
     // TODO put those somewhere as static
     asyncFct_t fct_ptr_rec[3] = { forasync1D_recursive, forasync2D_recursive,

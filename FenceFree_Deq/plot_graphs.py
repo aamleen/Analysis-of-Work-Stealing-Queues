@@ -95,7 +95,7 @@ def open_file(file_name):
             fd= open(filename, 'r')
             readfile(fd)
             fd.close
-        calculate_median()
+        calculate_avg(j)
 
 def Hclib_openFile(file_name):
     for i in range(1,6):
@@ -103,7 +103,7 @@ def Hclib_openFile(file_name):
         fd= open(filename, 'r')
         readfile(fd)
         fd.close
-    calculate_median()
+    calculate_avg(0)
 
 def set_plot(title,ylab):
     ax=plt.axes()
@@ -114,7 +114,7 @@ def set_plot(title,ylab):
     plt.xlabel('Delta -->')
 
 def plotting(hclib, design, y_axis, l=0, r=len(delta)):
-    if(hclib):
+    if(hclib==0):
         y_axis= [y_axis[0]]*len(delta)
     print(delta[l:r])
     print(y_axis[l:r])
@@ -125,24 +125,27 @@ def plotting(hclib, design, y_axis, l=0, r=len(delta)):
     set_plot(title,ylab)
     plotting(0, 'm^--', FF_yaxis)
     plotting(1, 'bo--', hclib_yaxis)
-    plot_name='Graphs/median/{0}_{1}_Time'.format()
+    plot_name='Graphs/testing/{0}_{1}_Time'.format()
     plt.savefig(plot_name)
 
     set_plot(title,ylab)
     plotting(0, 'm^--', FF_yaxis,0,10)
     plotting(1, 'bo--', hclib_yaxis,0,10)
-    plt.savefig('Graphs/median/{0}_{1}_Time_Zoom') """
+    plt.savefig('Graphs/testing/{0}_{1}_Time_Zoom') """
 
-FF_filename= "results/FF_"+benchmark_name+"_"+benchmark_param+"_"  #FF_fib_40_delta_1
-open_file(FF_filename)
+
+hclib_filename= "results/hclib_"+benchmark_name+"_"+benchmark_param+"_"  #hclib_fib_40_1
+Hclib_openFile(hclib_filename)
+
 FF_time= F_Kernel_time
 FF_ratio= F_ratio
 
 reset_vals_final()
 reset_vals_temp()
 
-hclib_filename= "results/hclib_"+benchmark_name+"_"+benchmark_param+"_"  #hclib_fib_40_1
-Hclib_openFile(hclib_filename)
+FF_filename= "results/FF_"+benchmark_name+"_"+benchmark_param+"_"  #FF_fib_40_delta_1
+open_file(FF_filename)
+
 
 title='FF v/s HClib Time [{0}({1})]'.format(benchmark_name,benchmark_param)
 ylab='Kernel_Time (msec)'
@@ -152,7 +155,7 @@ set_plot(title,ylab)
 plotting(0, 'm^--', FF_time)
 plotting(1, 'bo--', F_Kernel_time)
 plt.legend(['Fence Free Deq','HCLib Deque'])
-plot_name='Graphs/median/{0}_{1}_Time'.format(benchmark_name,benchmark_param)
+plot_name='Graphs/testing/{0}_{1}_Time'.format(benchmark_name,benchmark_param)
 plt.savefig(plot_name)
 plt.close(fig)
 
@@ -161,7 +164,7 @@ set_plot(title,ylab)
 plotting(0, 'm^--', FF_time,0,10)
 plotting(1, 'bo--', F_Kernel_time,0,10)
 plt.legend(['Fence Free Deq','HCLib Deque'])
-plot_name='Graphs/median/{0}_{1}_Time_Zoom.png'.format(benchmark_name,benchmark_param)
+plot_name='Graphs/testing/{0}_{1}_Time_Zoom.png'.format(benchmark_name,benchmark_param)
 plt.savefig(plot_name)
 plt.close(fig)
 
@@ -173,7 +176,7 @@ set_plot(title,ylab)
 plotting(0, 'm^--', FF_ratio)
 plotting(1, 'bo--', F_ratio)
 plt.legend(['Fence Free Deq','HCLib Deque'])
-plot_name='Graphs/median/{0}_{1}_Steal.png'.format(benchmark_name,benchmark_param)
+plot_name='Graphs/testing/{0}_{1}_Steal.png'.format(benchmark_name,benchmark_param)
 plt.savefig(plot_name)
 plt.close(fig)
 
@@ -182,7 +185,7 @@ set_plot(title,ylab)
 plotting(0, 'm^--', FF_ratio,0,10)
 plotting(1, 'bo--', F_ratio, 0, 10)
 plt.legend(['Fence Free Deq','HCLib Deque'])
-plot_name='Graphs/median/{0}_{1}_Steal_Zoom.png'.format(benchmark_name,benchmark_param)
+plot_name='Graphs/testing/{0}_{1}_Steal_Zoom.png'.format(benchmark_name,benchmark_param)
 plt.savefig(plot_name)
 plt.close(fig)
-print("Plotted to Graphs/median/")
+print("Plotted to Graphs/testing/")
