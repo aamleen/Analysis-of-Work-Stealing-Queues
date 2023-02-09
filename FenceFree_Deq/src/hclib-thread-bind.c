@@ -79,6 +79,11 @@ void bind_thread_rr(int worker_id) {
     bind_thread_with_mask(&mask, 1);
 }
 
+void new_bind_on_cpu(int cpu_id) {
+    int mask = cpu_id;
+    bind_thread_with_mask(&mask, 1);
+}
+
 /* Bind threads according to bind map */
 void bind_thread_map(int worker_id, int bind_map_size) {
     int mask = bind_map[worker_id % bind_map_size];

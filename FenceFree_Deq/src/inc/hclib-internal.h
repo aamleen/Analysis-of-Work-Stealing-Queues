@@ -102,6 +102,7 @@ void log_(const char * file, int line, hclib_worker_state * ws, const char * for
 
 // thread binding
 void bind_thread(int worker_id, int nworkers);
+void new_bind_on_cpu(int cpu_id); 
 int* get_thread_bind_map();
 
 int get_current_worker();

@@ -18,7 +18,7 @@
 #include "hclib-atomics.h"
 #include <unistd.h>
 
-#define delta 2
+#define delta 4
 /*
  * push an entry onto the tail of the deque
  */
@@ -36,11 +36,11 @@ int deque_push(deque_t *deq, hclib_task_t *entry) {
  * the steal protocol
  */
 hclib_task_t *deque_steal(deque_t *deq) {
-    _hclib_atomic_inc_relaxed(&deq->counter);
+    /* _hclib_atomic_inc_relaxed(&deq->counter);
     if(deq->counter >19){
         deq->counter=0;
         sleep(0.00000001);
-            }
+    } */
     int head;
     int tail;
     //int thiefid = rand();

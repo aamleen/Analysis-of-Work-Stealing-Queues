@@ -66,7 +66,7 @@ hclib_task_t *hpt_steal_task(hclib_worker_state *ws) {
                 return buff;
             }
         }
-
+        //sleep(0.0000001);
         /* Nothing found in this place, go to the parent */
         pl = pl->parent;
     }
@@ -1008,7 +1008,8 @@ place_t *read_hpt(place_t *** all_places, int *num_pl, int *nproc,
         if (workers_str) {
             num_workers = atoi(workers_str);
         } else {
-            num_workers = sysconf(_SC_NPROCESSORS_ONLN);
+            // num_workers = sysconf(_SC_NPROCESSORS_ONLN);
+            num_workers = 15;
             fprintf(stderr, "WARNING: HCLIB_WORKERS not provided, running with "
                     "default of %u\n", num_workers);
         }
