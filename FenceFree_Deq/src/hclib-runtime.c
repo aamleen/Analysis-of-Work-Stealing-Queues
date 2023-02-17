@@ -17,7 +17,7 @@
 #include <pthread.h>
 #include <sys/time.h>
 #include <stddef.h>
-#include <time.h>
+
 #include <hclib.h>
 #include <hclib-internal.h>
 #include <hclib-atomics.h>
@@ -25,12 +25,6 @@
 #include <hclib-hpt.h>
 #include <hclib-perfcounter.h>
 #include <hclib-timeline.h>
-
-
-int nanosleep(const struct timespec *req, struct timespec *rem);
-
-
-_Atomic long long int totalQueueState;
 
 static double benchmark_start_time_stats = 0;
 static double user_specified_timer = 0;
@@ -41,11 +35,6 @@ hc_context *hclib_context = NULL;
 
 static char *hclib_stats = NULL;
 static int bind_threads = -1;
-
-static bool terminate;
-
-long long int* arr;
-long long int arr_size;
 
 void hclib_start_finish();
 
@@ -109,9 +98,7 @@ static void *worker_routine(void *args);
  * Main initialization function for the hclib_context object.
  */
 void hclib_global_init() {
-    totalQueueState = 0;
     // Build queues
-
     hclib_context->hpt = read_hpt(&hclib_context->places,
                                   &hclib_context->nplaces, &hclib_context->nproc,
                                   &hclib_context->workers, &hclib_context->nworkers);
@@ -247,9 +234,6 @@ static inline void check_out_finish(finish_t *finish) {
 }
 
 static inline void execute_task(hclib_task_t *task) {
-    //atomic_fetch_sub_explicit(&totalQueueState, 1, memory_order_relaxed);
-    
-    _hclib_atomic_dec_relaxed_long(&totalQueueState);
     finish_t *current_finish = task->current_finish;
     /*
      * Update the current finish of this worker to be inherited from the
@@ -271,8 +255,6 @@ static inline void rt_schedule_async(hclib_task_t *async_task,
             async_task, async_task->place);
 
     ws->total_push++;
-    _hclib_atomic_inc_relaxed_long(&totalQueueState);
-    //atomic_fetch_add_explicit(&totalQueueState, 1, memory_order_relaxed);
     // push on worker deq
     if (async_task->place) {
         deque_push_place(ws, async_task->place, async_task);
@@ -383,7 +365,6 @@ void find_and_run_task(hclib_worker_state *ws) {
             if (task) {
 		hclib_log_event(ws->id, SUCCESS_STEALS);
 		ws->total_steals++;
-        
                 MARK_BUSY(ws->id);
                 break;
             }
@@ -391,7 +372,6 @@ void find_and_run_task(hclib_worker_state *ws) {
     }
 
     if (task) {
-        //_hclib_atomic_dec_relaxed(&totalQueueState);
         execute_task(task);
     }
 }
@@ -576,7 +556,6 @@ static inline void slave_worker_finishHelper_routine(finish_t *finish) {
             }
         }
         if (task) {
-            //_hclib_atomic_dec_relaxed(&totalQueueState);
             execute_task(task);
         }
     }
@@ -620,7 +599,6 @@ void help_finish(finish_t *finish) {
             // It's safe to continue executing sub-tasks on the current
             // stack, since the finish scope blocks on them anyway.
             else if (task->current_finish == finish) {
-                //_hclib_atomic_dec_relaxed(&totalQueueState);
                 execute_task(task); // !!! May cause a worker-swap!!!
             }
             // For tasks in a different finish scope, we need a new context.
@@ -833,55 +811,7 @@ void zero_initialize_counters() {
     }
 }
 
-void* daemon_loop(void* args) {
-
-  struct timespec interval, remainder;
-
-  interval.tv_sec  =  0;
-
-  interval.tv_nsec = 100;
-
-  // bind to last core, as the master thread always remain active on core-0
-
-//   bind_daemon_to_core();
-    new_bind_on_cpu(19);
-
-
-
-  while(terminate == false) {
-
-    // clock_gettime (CLOCK_MONOTONIC, &adaptTimeStart);
-
-    /* count tasks and append to list */
-    // printf("QueueState: %lld", totalQueueState);
-
-    // add to list
-    arr = realloc(arr, sizeof(long long int) * (arr_size + 1));
-    arr[arr_size] = totalQueueState;
-    arr_size++;
-
-    // clock_gettime (CLOCK_MONOTONIC, &adaptTimeStop);
-
-    if ((interval.tv_sec > 0) || (interval.tv_nsec > 0)) {
-
-      nanosleep (&interval, &remainder);
-
-    }
-
-  }
-
-  return NULL;
-
-}
-
 void hclib_kernel(generic_frame_ptr fct_ptr, void *arg) {
-    terminate = false;
-    arr_size = 0;
-
-    pthread_t daemon_thread;
-
-    pthread_create(&daemon_thread, NULL, daemon_loop, NULL);
-
     zero_initialize_counters();
     perfcounters_start();
     double start = mysecond();
@@ -893,9 +823,6 @@ void hclib_kernel(generic_frame_ptr fct_ptr, void *arg) {
     hclib_stopStats();
     user_specified_timer = (mysecond() - start)*1000;
     perfcounters_stop();
-    terminate = true;
-
-    pthread_join(daemon_thread, NULL);
 }
 
 /*
@@ -903,7 +830,6 @@ void hclib_kernel(generic_frame_ptr fct_ptr, void *arg) {
  * the user program before any HC actions are performed.
  */
 static void hclib_init() {
-    totalQueueState=0;
     HASSERT(hclib_stats == NULL);
     HASSERT(bind_threads == -1);
     hclib_stats = getenv("HCLIB_STATS");
@@ -945,14 +871,6 @@ static void hclib_finalize() {
     hclib_cleanup();
 }
 
-void dump(){
-    // print the arr
-    printf("Starting Dumping\n");
-    for (int i = 0; i < arr_size; i++) {
-        printf("%lld ", arr[i]);
-    }
-}
-
 /**
  * @brief Initialize and launch HClib runtime.
  * Implicitly defines a global finish scope.
@@ -983,6 +901,5 @@ void hclib_launch(generic_frame_ptr fct_ptr, void *arg) {
     fct_ptr(arg);
 #endif
     hclib_finalize();
-    dump();
 }
 

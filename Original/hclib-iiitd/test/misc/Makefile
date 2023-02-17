@@ -5,7 +5,7 @@ LIKWID_INCLUDE ?= -I/usr/local/include
 LIKWID_LIBDIR ?= -L/usr/local/lib
 LIKWID_LIB ?= -llikwid
 
-TARGETS := qsort fib nqueens heat matmul cilksort srad sor1d
+TARGETS := qsort fib nqueens heat matmul cilksort srad sor1d trans_closure
 
 all: clean $(TARGETS) clean-obj
 

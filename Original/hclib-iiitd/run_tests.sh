@@ -1,8 +1,8 @@
 cd test/misc
 ./run_script.sh
 clear
-benchmarks=("fib" "heat" "matmul" "qsort")
-param=(42 3 1024 100000000)
+benchmarks=("fib" "heat")
+param=(42 3)
 counter=0
 for j in ${!benchmarks[@]}
 do

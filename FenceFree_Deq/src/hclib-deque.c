@@ -18,7 +18,7 @@
 #include "hclib-atomics.h"
 #include <unistd.h>
 
-#define delta 4
+#define delta 2
 /*
  * push an entry onto the tail of the deque
  */
@@ -49,13 +49,11 @@ hclib_task_t *deque_steal(deque_t *deq) {
         head = deq->head;
         tail = deq->tail;
         if (head>=tail){
-            //prinntf("\nHead>Tail by %d thief",thiefid);
+            //printf("\nHead>Tail");
             return NULL;
         } 
         if(tail-delta <= head){ 
-            //16 <= head
-            //24 <= head
-            // printf("\n---> delta+Head>Tail by thief");
+            //printf("\nCall Hclib");
             return NULL;
         }
         hclib_task_t *t = deq->data[head % INIT_DEQUE_CAPACITY];
@@ -70,23 +68,29 @@ hclib_task_t *deque_steal(deque_t *deq) {
  * pop the task out of the deque from the tail
  */
 hclib_task_t *deque_pop(deque_t *deq) {
-    int tail = deq->tail - 1;
-    deq->tail = tail;
+    int tail = _hclib_atomic_dec_relaxed(&deq->tail);
     int head = _hclib_atomic_load_relaxed(&deq->head);
 
-    if(tail>head){
-        //Thief will observe t and will not try to steal task t
-        return deq->data[tail % INIT_DEQUE_CAPACITY];
-    }
-    if(tail<head){
-        deq->tail = head;
+    int size = tail - head;
+    if (size < 0) {
+        _hclib_atomic_store_relaxed(&deq->tail, head);
         return NULL;
     }
-    //tail == head
-    deq->tail = head +1;
-    if(! _hclib_atomic_cas_acq_rel(&deq->head, head, head+1))
-        return NULL;
-    else
-        return deq->data[tail % INIT_DEQUE_CAPACITY];
+    hclib_task_t *t = deq->data[tail % INIT_DEQUE_CAPACITY];
+
+    if (size > 0) {
+        return t;
+    }
+
+    /* now the deque appears empty */
+    /* I need to compete with the thieves for the last task */
+    //@- if (!hc_cas(&deq->head, head, head + 1)) {
+    if (!_hclib_atomic_cas_acq_rel(&deq->head, head, head + 1)) {
+        t = NULL;
+    }
+
+    _hclib_atomic_inc_relaxed(&deq->tail);
+
+    return t;
 }
 
