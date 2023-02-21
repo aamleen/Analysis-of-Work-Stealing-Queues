@@ -1,0 +1,100 @@
+
+-----
+mkdir timedrun fake
+
+-----
+---------HCLIB_RUNTIME_INFO-----------
+>>> HCLIB_WORKERS	= 20
+>>> HCLIB_HPT_FILE	= (null)
+>>> HCLIB_BIND_THREADS	= true
+WARNING: HCLIB_BIND_THREADS assign cores in round robin. E.g., setting HCLIB_WORKERS=12 on 2-socket node, each with 12 cores.
+>>> HCLIB_STATS		= 1
+----------------------------------------
+Using 20 worker threads (including main thread)
+HCLIB_INFO: Round Robin Thread Binding
+
+Configurations: number of nodes- 10000, tolerance- 0.001000,teleportation parameter- 0.850000, number of iterations= 1000, FACTOR- 40 
+
+Kernel starting 
+Computations completed. Kernel terminating 
+============================ MMTk Statistics Totals ============================
+time.kernel	totalPush	totalSteals	tWork	tSearch	tIdle
+863.351	64449	11166	98.57	1.43	0.00
+Total time: 4973.050 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== TEST PASSED in 4973.050 msec =====
+
+-----
+mkdir timedrun fake
+
+-----
+---------HCLIB_RUNTIME_INFO-----------
+>>> HCLIB_WORKERS	= 20
+>>> HCLIB_HPT_FILE	= (null)
+>>> HCLIB_BIND_THREADS	= true
+WARNING: HCLIB_BIND_THREADS assign cores in round robin. E.g., setting HCLIB_WORKERS=12 on 2-socket node, each with 12 cores.
+>>> HCLIB_STATS		= 1
+----------------------------------------
+Using 20 worker threads (including main thread)
+HCLIB_INFO: Round Robin Thread Binding
+
+Configurations: number of nodes- 10000, tolerance- 0.001000,teleportation parameter- 0.850000, number of iterations= 1000, FACTOR- 40 
+
+Kernel starting 
+Computations completed. Kernel terminating 
+============================ MMTk Statistics Totals ============================
+time.kernel	totalPush	totalSteals	tWork	tSearch	tIdle
+872.939	64449	11658	98.69	1.31	0.00
+Total time: 5085.253 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== TEST PASSED in 5085.253 msec =====
+
+-----
+mkdir timedrun fake
+
+-----
+---------HCLIB_RUNTIME_INFO-----------
+>>> HCLIB_WORKERS	= 20
+>>> HCLIB_HPT_FILE	= (null)
+>>> HCLIB_BIND_THREADS	= true
+WARNING: HCLIB_BIND_THREADS assign cores in round robin. E.g., setting HCLIB_WORKERS=12 on 2-socket node, each with 12 cores.
+>>> HCLIB_STATS		= 1
+----------------------------------------
+Using 20 worker threads (including main thread)
+HCLIB_INFO: Round Robin Thread Binding
+
+Configurations: number of nodes- 10000, tolerance- 0.001000,teleportation parameter- 0.850000, number of iterations= 1000, FACTOR- 40 
+
+Kernel starting 
+Computations completed. Kernel terminating 
+============================ MMTk Statistics Totals ============================
+time.kernel	totalPush	totalSteals	tWork	tSearch	tIdle
+892.357	64449	12161	98.62	1.38	0.00
+Total time: 5008.793 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== TEST PASSED in 5008.793 msec =====
+
+-----
+mkdir timedrun fake
+
+-----
+---------HCLIB_RUNTIME_INFO-----------
+>>> HCLIB_WORKERS	= 20
+>>> HCLIB_HPT_FILE	= (null)
+>>> HCLIB_BIND_THREADS	= true
+WARNING: HCLIB_BIND_THREADS assign cores in round robin. E.g., setting HCLIB_WORKERS=12 on 2-socket node, each with 12 cores.
+>>> HCLIB_STATS		= 1
+----------------------------------------
+Using 20 worker threads (including main thread)
+HCLIB_INFO: Round Robin Thread Binding
+
+Configurations: number of nodes- 10000, tolerance- 0.001000,teleportation parameter- 0.850000, number of iterations= 1000, FACTOR- 40 
+
+Kernel starting 
+Computations completed. Kernel terminating 
+============================ MMTk Statistics Totals ============================
+time.kernel	totalPush	totalSteals	tWork	tSearch	tIdle
+865.220	64449	11450	98.71	1.29	0.00
+Total time: 4978.860 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== TEST PASSED in 4978.860 msec =====

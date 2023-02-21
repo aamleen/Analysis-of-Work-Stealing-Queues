@@ -27,7 +27,6 @@ uname -v = #232-Ubuntu SMP Wed Jan 13 10:18:39 UTC 2021
 /usr/bin/oslevel       = unknown
 /bin/universe          = unknown
 
-PATH: /mnt/hdd2/home/aamleen2022/.vscode-server/bin/441438abd1ac652551dbe4d408dfcec8a499b8bf/bin/remote-cli
 PATH: /usr/local/sbin
 PATH: /usr/local/bin
 PATH: /usr/sbin
@@ -92,8 +91,8 @@ configure:3158: found /usr/bin/gcc
 configure:3169: result: gcc
 configure:3398: checking for C compiler version
 configure:3407: gcc --version >&5
-gcc (Ubuntu 7.5.0-6ubuntu2) 7.5.0
-Copyright (C) 2017 Free Software Foundation, Inc.
+gcc (Ubuntu 5.5.0-12ubuntu1~16.04) 5.5.0 20171010
+Copyright (C) 2015 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
@@ -101,13 +100,11 @@ configure:3418: $? = 0
 configure:3407: gcc -v >&5
 Using built-in specs.
 COLLECT_GCC=gcc
-COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper
-OFFLOAD_TARGET_NAMES=nvptx-none
-OFFLOAD_TARGET_DEFAULT=1
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper
 Target: x86_64-linux-gnu
-Configured with: ../src/configure -v --with-pkgversion='Ubuntu 7.5.0-6ubuntu2' --with-bugurl=file:///usr/share/doc/gcc-7/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++ --prefix=/usr --with-gcc-major-version-only --program-suffix=-7 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 5.5.0-12ubuntu1~16.04' --with-bugurl=file:///usr/share/doc/gcc-5/README.Bugs --enable-languages=c,ada,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-5 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-5-amd64/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-5-amd64 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-5-amd64 --with-arch-directory=amd64 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
 Thread model: posix
-gcc version 7.5.0 (Ubuntu 7.5.0-6ubuntu2) 
+gcc version 5.5.0 20171010 (Ubuntu 5.5.0-12ubuntu1~16.04) 
 configure:3418: $? = 0
 configure:3407: gcc -V >&5
 gcc: error: unrecognized command line option '-V'
@@ -115,7 +112,7 @@ gcc: fatal error: no input files
 compilation terminated.
 configure:3418: $? = 1
 configure:3407: gcc -qversion >&5
-gcc: error: unrecognized command line option '-qversion'; did you mean '--version'?
+gcc: error: unrecognized command line option '-qversion'
 gcc: fatal error: no input files
 compilation terminated.
 configure:3418: $? = 1
@@ -166,8 +163,8 @@ configure:4277: found /usr/bin/g++
 configure:4288: result: g++
 configure:4315: checking for C++ compiler version
 configure:4324: g++ --version >&5
-g++ (Ubuntu 7.5.0-6ubuntu2) 7.5.0
-Copyright (C) 2017 Free Software Foundation, Inc.
+g++ (Ubuntu 5.5.0-12ubuntu1~16.04) 5.5.0 20171010
+Copyright (C) 2015 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
@@ -175,13 +172,11 @@ configure:4335: $? = 0
 configure:4324: g++ -v >&5
 Using built-in specs.
 COLLECT_GCC=g++
-COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper
-OFFLOAD_TARGET_NAMES=nvptx-none
-OFFLOAD_TARGET_DEFAULT=1
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper
 Target: x86_64-linux-gnu
-Configured with: ../src/configure -v --with-pkgversion='Ubuntu 7.5.0-6ubuntu2' --with-bugurl=file:///usr/share/doc/gcc-7/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++ --prefix=/usr --with-gcc-major-version-only --program-suffix=-7 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 5.5.0-12ubuntu1~16.04' --with-bugurl=file:///usr/share/doc/gcc-5/README.Bugs --enable-languages=c,ada,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-5 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-5-amd64/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-5-amd64 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-5-amd64 --with-arch-directory=amd64 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
 Thread model: posix
-gcc version 7.5.0 (Ubuntu 7.5.0-6ubuntu2) 
+gcc version 5.5.0 20171010 (Ubuntu 5.5.0-12ubuntu1~16.04) 
 configure:4335: $? = 0
 configure:4324: g++ -V >&5
 g++: error: unrecognized command line option '-V'
@@ -189,7 +184,7 @@ g++: fatal error: no input files
 compilation terminated.
 configure:4335: $? = 1
 configure:4324: g++ -qversion >&5
-g++: error: unrecognized command line option '-qversion'; did you mean '--version'?
+g++: error: unrecognized command line option '-qversion'
 g++: fatal error: no input files
 compilation terminated.
 configure:4335: $? = 1
@@ -294,9 +289,7 @@ configure:8082: checking how to run the C preprocessor
 configure:8113: gcc -E  conftest.c
 configure:8113: $? = 0
 configure:8127: gcc -E  conftest.c
-conftest.c:9:10: fatal error: ac_nonexistent.h: No such file or directory
- #include <ac_nonexistent.h>
-          ^~~~~~~~~~~~~~~~~~
+conftest.c:9:28: fatal error: ac_nonexistent.h: No such file or directory
 compilation terminated.
 configure:8127: $? = 1
 configure: failed program was:
@@ -313,9 +306,7 @@ configure:8152: result: gcc -E
 configure:8172: gcc -E  conftest.c
 configure:8172: $? = 0
 configure:8186: gcc -E  conftest.c
-conftest.c:9:10: fatal error: ac_nonexistent.h: No such file or directory
- #include <ac_nonexistent.h>
-          ^~~~~~~~~~~~~~~~~~
+conftest.c:9:28: fatal error: ac_nonexistent.h: No such file or directory
 compilation terminated.
 configure:8186: $? = 1
 configure: failed program was:
@@ -423,9 +414,7 @@ configure:12666: checking how to run the C++ preprocessor
 configure:12693: g++ -E  conftest.cpp
 configure:12693: $? = 0
 configure:12707: g++ -E  conftest.cpp
-conftest.cpp:21:10: fatal error: ac_nonexistent.h: No such file or directory
- #include <ac_nonexistent.h>
-          ^~~~~~~~~~~~~~~~~~
+conftest.cpp:21:28: fatal error: ac_nonexistent.h: No such file or directory
 compilation terminated.
 configure:12707: $? = 1
 configure: failed program was:
@@ -454,9 +443,7 @@ configure:12732: result: g++ -E
 configure:12752: g++ -E  conftest.cpp
 configure:12752: $? = 0
 configure:12766: g++ -E  conftest.cpp
-conftest.cpp:21:10: fatal error: ac_nonexistent.h: No such file or directory
- #include <ac_nonexistent.h>
-          ^~~~~~~~~~~~~~~~~~
+conftest.cpp:21:28: fatal error: ac_nonexistent.h: No such file or directory
 compilation terminated.
 configure:12766: $? = 1
 configure: failed program was:

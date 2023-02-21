@@ -48,12 +48,12 @@ ARGS=( "-nbodies 1000000 -FACTOR 32" \
         "-file ${GRAPH_PATH}/rmat22.sym.egr -FACTOR 2" \
         )
 # Total number of times each benchmark should run in one setting
-ITERATIONS=3
+ITERATIONS=4
 # Total number of threads in each experiment across each build and across each benchmark
-THREADS=( 4 8 12 16 20 )
+THREADS=( 20 )
 
 export HCLIB_STATS=1
-#export HCLIB_BIND_THREADS=1
+export HCLIB_BIND_THREADS=true
 #############################################
 ######### NO MODIFICATIONS BELOW ############
 #############################################

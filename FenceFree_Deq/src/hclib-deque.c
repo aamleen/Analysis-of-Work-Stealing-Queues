@@ -18,7 +18,7 @@
 #include "hclib-atomics.h"
 #include <unistd.h>
 
-#define delta 2
+#define delta 0
 /*
  * push an entry onto the tail of the deque
  */

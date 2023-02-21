@@ -6,7 +6,7 @@ libhclib_la-hclib.lo: ../../src/hclib.c /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/long-double.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/stddef.h \
  /usr/include/x86_64-linux-gnu/bits/string_fortified.h ../../inc/hclib.h \
  ../../inc/hclib_common.h ../inc/hclib_config.h ../../inc/hclib-task.h \
  ../../inc/hclib-rt.h /usr/include/stdlib.h \
@@ -15,7 +15,7 @@ libhclib_la-hclib.lo: ../../src/hclib.c /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib.h /usr/include/stdio.h \
- /usr/lib/gcc/x86_64-linux-gnu/7/include/stdarg.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/stdarg.h \
  /usr/include/x86_64-linux-gnu/bits/types.h \
  /usr/include/x86_64-linux-gnu/bits/timesize.h \
  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
@@ -51,8 +51,8 @@ libhclib_la-hclib.lo: ../../src/hclib.c /usr/include/stdc-predef.h \
  ../../inc/hclib-rt.h ../../inc/hclib-task.h \
  ../../inc/hclib-async-struct.h ../../src/inc/hclib-finish.h \
  ../../inc/hclib-promise.h ../../src/inc/hclib-atomics.h \
- /usr/lib/gcc/x86_64-linux-gnu/7/include/stdbool.h \
- /usr/lib/gcc/x86_64-linux-gnu/7/include/stdatomic.h
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/stdbool.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/stdatomic.h
 
 /usr/include/stdc-predef.h:
 
@@ -72,7 +72,7 @@ libhclib_la-hclib.lo: ../../src/hclib.c /usr/include/stdc-predef.h \
 
 /usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h:
+/usr/lib/gcc/x86_64-linux-gnu/5/include/stddef.h:
 
 /usr/include/x86_64-linux-gnu/bits/string_fortified.h:
 
@@ -100,7 +100,7 @@ libhclib_la-hclib.lo: ../../src/hclib.c /usr/include/stdc-predef.h \
 
 /usr/include/stdio.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/7/include/stdarg.h:
+/usr/lib/gcc/x86_64-linux-gnu/5/include/stdarg.h:
 
 /usr/include/x86_64-linux-gnu/bits/types.h:
 
@@ -190,6 +190,6 @@ libhclib_la-hclib.lo: ../../src/hclib.c /usr/include/stdc-predef.h \
 
 ../../src/inc/hclib-atomics.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/7/include/stdbool.h:
+/usr/lib/gcc/x86_64-linux-gnu/5/include/stdbool.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/7/include/stdatomic.h:
+/usr/lib/gcc/x86_64-linux-gnu/5/include/stdatomic.h:

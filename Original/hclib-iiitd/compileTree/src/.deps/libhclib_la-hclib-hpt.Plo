@@ -1,8 +1,8 @@
 libhclib_la-hclib-hpt.lo: ../../src/hclib-hpt.c \
  /usr/include/stdc-predef.h ../../src/inc/hclib-hpt.h \
  ../../src/inc/hclib-internal.h \
- /usr/lib/gcc/x86_64-linux-gnu/7/include/stdarg.h \
- /usr/lib/gcc/x86_64-linux-gnu/7/include/stdint.h /usr/include/stdint.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/stdarg.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -17,7 +17,7 @@ libhclib_la-hclib-hpt.lo: ../../src/hclib-hpt.c \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h ../inc/hclib_config.h \
  ../../src/inc/hclib-tree.h /usr/include/stdlib.h \
- /usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/stddef.h \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
@@ -52,8 +52,8 @@ libhclib_la-hclib-hpt.lo: ../../src/hclib-hpt.c \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h /usr/include/assert.h \
  ../../inc/hclib-timer.h ../../inc/hclib-promise.h \
  ../../inc/hclib-place.h ../../src/inc/hclib-atomics.h \
- /usr/lib/gcc/x86_64-linux-gnu/7/include/stdbool.h \
- /usr/lib/gcc/x86_64-linux-gnu/7/include/stdatomic.h ../../inc/hclib.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/stdbool.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/stdatomic.h ../../inc/hclib.h \
  ../../inc/hclib_common.h ../../inc/hclib-task.h \
  ../../inc/hclib-perfcounter.h ../../src/inc/litectx.h \
  ../../inc/hclib_common.h ../../src/fcontext/fcontext.h \
@@ -70,8 +70,8 @@ libhclib_la-hclib-hpt.lo: ../../src/hclib-hpt.c \
  /usr/include/libxml2/libxml/xmlversion.h \
  /usr/include/libxml2/libxml/xmlexports.h \
  /usr/include/libxml2/libxml/tree.h \
- /usr/lib/gcc/x86_64-linux-gnu/7/include/limits.h \
- /usr/lib/gcc/x86_64-linux-gnu/7/include/syslimits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include-fixed/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include-fixed/syslimits.h \
  /usr/include/limits.h /usr/include/libxml2/libxml/xmlstring.h \
  /usr/include/libxml2/libxml/xmlregexp.h \
  /usr/include/libxml2/libxml/dict.h /usr/include/libxml2/libxml/hash.h \
@@ -91,7 +91,7 @@ libhclib_la-hclib-hpt.lo: ../../src/hclib-hpt.c \
  /usr/include/x86_64-linux-gnu/unicode/uvernum.h \
  /usr/include/x86_64-linux-gnu/unicode/urename.h \
  /usr/include/x86_64-linux-gnu/unicode/uversion.h \
- /usr/lib/gcc/x86_64-linux-gnu/7/include/float.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/float.h \
  /usr/include/x86_64-linux-gnu/unicode/utf.h \
  /usr/include/x86_64-linux-gnu/unicode/utf8.h \
  /usr/include/x86_64-linux-gnu/unicode/utf16.h \
@@ -114,9 +114,9 @@ libhclib_la-hclib-hpt.lo: ../../src/hclib-hpt.c \
 
 ../../src/inc/hclib-internal.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/7/include/stdarg.h:
+/usr/lib/gcc/x86_64-linux-gnu/5/include/stdarg.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/7/include/stdint.h:
+/usr/lib/gcc/x86_64-linux-gnu/5/include/stdint.h:
 
 /usr/include/stdint.h:
 
@@ -154,7 +154,7 @@ libhclib_la-hclib-hpt.lo: ../../src/hclib-hpt.c \
 
 /usr/include/stdlib.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h:
+/usr/lib/gcc/x86_64-linux-gnu/5/include/stddef.h:
 
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 
@@ -242,9 +242,9 @@ libhclib_la-hclib-hpt.lo: ../../src/hclib-hpt.c \
 
 ../../src/inc/hclib-atomics.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/7/include/stdbool.h:
+/usr/lib/gcc/x86_64-linux-gnu/5/include/stdbool.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/7/include/stdatomic.h:
+/usr/lib/gcc/x86_64-linux-gnu/5/include/stdatomic.h:
 
 ../../inc/hclib.h:
 
@@ -290,9 +290,9 @@ libhclib_la-hclib-hpt.lo: ../../src/hclib-hpt.c \
 
 /usr/include/libxml2/libxml/tree.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/7/include/limits.h:
+/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed/limits.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/7/include/syslimits.h:
+/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed/syslimits.h:
 
 /usr/include/limits.h:
 
@@ -338,7 +338,7 @@ libhclib_la-hclib-hpt.lo: ../../src/hclib-hpt.c \
 
 /usr/include/x86_64-linux-gnu/unicode/uversion.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/7/include/float.h:
+/usr/lib/gcc/x86_64-linux-gnu/5/include/float.h:
 
 /usr/include/x86_64-linux-gnu/unicode/utf.h:
 
