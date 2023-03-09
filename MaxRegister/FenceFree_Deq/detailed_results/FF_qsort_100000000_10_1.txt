@@ -1,0 +1,22 @@
+
+-----
+mkdir timedrun fake
+
+-----
+---------HCLIB_RUNTIME_INFO-----------
+>>> HCLIB_WORKERS	= 20
+>>> HCLIB_HPT_FILE	= (null)
+>>> HCLIB_BIND_THREADS	= true
+WARNING: HCLIB_BIND_THREADS assign cores in round robin. E.g., setting HCLIB_WORKERS=12 on 2-socket node, each with 12 cores.
+>>> HCLIB_STATS		= 1
+----------------------------------------
+Using 20 worker threads (including main thread)
+HCLIB_INFO: Round Robin Thread Binding
+Sorting 100000000 size array with threshold of 100000
+QuickSort passed
+============================ MMTk Statistics Totals ============================
+time.kernel	totalPush	totalSteals	tWork	tSearch	tIdle
+4802.198	4056	26	43.94	55.10	0.96
+Total time: 7840.463 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== TEST PASSED in 7840.463 msec =====

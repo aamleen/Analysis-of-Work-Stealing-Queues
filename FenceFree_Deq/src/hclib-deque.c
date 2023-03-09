@@ -18,7 +18,7 @@
 #include "hclib-atomics.h"
 #include <unistd.h>
 
-#define delta 0
+#define delta 1
 /*
  * push an entry onto the tail of the deque
  */
@@ -26,9 +26,10 @@ int deque_push(deque_t *deq, hclib_task_t *entry) {
     /* int tail = _hclib_atomic_load_relaxed(&deq->tail);
     int head = _hclib_atomic_load_relaxed(&deq->head); */
     // printf("HELLO");
-    int tail = deq->tail;
+    int tail = _hclib_atomic_load_relaxed(&deq->tail);
+    // int tail = deq->tail;
     deq->data[tail%INIT_DEQUE_CAPACITY] = entry;
-    deq->tail = tail+1;
+    _hclib_atomic_inc_release(&deq->tail);
     return 1;
 }
 

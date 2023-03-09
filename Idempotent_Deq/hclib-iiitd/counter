@@ -1,0 +1,43 @@
+Binary file compileTree/src/.libs/libhclib.a matches
+Binary file compileTree/src/.libs/libhclib_la-hclib-runtime.o matches
+Binary file compileTree/src/.libs/libhclib.so.0.0.0 matches
+Binary file compileTree/src/libhclib_la-hclib-runtime.o matches
+README.md:4:HClib is a task-based parallel programming model that supports the finish-async,
+Binary file hclib-install/lib/libhclib.a matches
+Binary file hclib-install/lib/libhclib.so.0.0.0 matches
+src/hclib-runtime.c:220:        _hclib_atomic_inc_acquire(&finish->counter);
+src/hclib-runtime.c:227:        if (_hclib_atomic_dec_release(&finish->counter) == 0) {
+src/hclib-runtime.c:229:            HASSERT(!_hclib_promise_is_satisfied(finish->finish_deps[0]->owner));
+src/hclib-runtime.c:230:            hclib_promise_put(finish->finish_deps[0]->owner, finish);
+src/hclib-runtime.c:524:     * finish->finish_deps.
+src/hclib-runtime.c:526:    hclib_async(_finish_ctx_resume, hclib_finish_ctx, finish->finish_deps,
+src/hclib-runtime.c:544:    while (_hclib_atomic_load_relaxed(&finish->counter) > 0) {
+src/hclib-runtime.c:548:            while (_hclib_atomic_load_relaxed(&finish->counter) > 0) {
+src/hclib-runtime.c:611:        } while (_hclib_atomic_load_relaxed(&finish->counter) > 1);
+src/hclib-runtime.c:616:        if (_hclib_atomic_load_relaxed(&finish->counter) > 1) {
+src/hclib-runtime.c:620:            finish->finish_deps = finish_deps;
+src/hclib-runtime.c:637:            HASSERT(_hclib_atomic_load_relaxed(&finish->counter) == 1);
+src/hclib-runtime.c:638:            // finish->counter == 1 implies that all the tasks are done
+src/hclib-runtime.c:640:            _hclib_atomic_dec_acq_rel(&finish->counter);
+src/hclib-runtime.c:648:    HASSERT(_hclib_atomic_load_relaxed(&finish->counter) == 0);
+src/hclib-runtime.c:659:    finish->parent = ws->current_finish;
+src/hclib-runtime.c:673:    finish->finish_deps = NULL;
+src/hclib-runtime.c:674:    check_in_finish(finish->parent); // check_in_finish performs NULL check
+src/hclib-runtime.c:675:    _hclib_atomic_store_release(&finish->counter, 1);
+src/hclib-runtime.c:677:    finish->counter = 0;
+src/hclib-runtime.c:678:    if(finish->parent) {
+src/hclib-runtime.c:679:        check_in_finish(finish->parent); // check_in_finish performs NULL check
+src/hclib-runtime.c:689:    HASSERT(_hclib_atomic_load_relaxed(&current_finish->counter) > 0);
+src/hclib-runtime.c:691:    HASSERT(_hclib_atomic_load_relaxed(&current_finish->counter) == 0);
+src/hclib-runtime.c:692:    check_out_finish(current_finish->parent); // NULL check in check_out_finish
+src/hclib-runtime.c:695:    if(_hclib_atomic_load_relaxed(&current_finish->counter) > 0) {
+src/hclib-runtime.c:698:    HASSERT(_hclib_atomic_load_relaxed(&current_finish->counter) == 0);
+src/hclib-runtime.c:699:    if(current_finish->parent) {
+src/hclib-runtime.c:700:	check_out_finish(current_finish->parent);
+src/hclib-runtime.c:703:    CURRENT_WS_INTERNAL->current_finish = current_finish->parent;
+src/hclib-runtime.c:711:    HASSERT(_hclib_atomic_load_relaxed(&current_finish->counter) > 0);
+src/hclib-runtime.c:728:    current_finish->finish_deps = finish_deps;
+src/hclib-runtime.c:734:    check_out_finish(current_finish->parent);
+src/hclib-runtime.c:735:    CURRENT_WS_INTERNAL->current_finish = current_finish->parent;
+src/fcontext/make_i386_sysv_macho_gas.S:53:    addl  $finish-1b, %ecx
+src/fcontext/make_i386_sysv_elf_gas.S:54:    addl  $finish-1b, %ecx

@@ -1,0 +1,9 @@
+.vscode-server/
+.ssh/
+.cache/
+.config/
+.dotnet/
+.ipython/
+.local/
+.nano/
+.bash_history

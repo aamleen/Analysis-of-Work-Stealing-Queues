@@ -1,0 +1,22 @@
+Program counts the number of vertices with degree atleast k in a (randomly generated) undirected graph.
+
+## To run Parallel:
+```
+$ make
+$ ./kcore_par -nbodies <problem_size> -k <value_k>
+```
+
+## To run Sequential:
+```
+$ make
+$ ./kcore_ser -nbodies <problem_size> -k <value_k>
+```
+
+
+### Default Values:
+`nbodies` = 10000  
+`k` = 4750
+
+
+###### TODO: re-check speedup
+ 

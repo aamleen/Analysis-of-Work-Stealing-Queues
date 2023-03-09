@@ -1,0 +1,22 @@
+
+-----
+mkdir timedrun fake
+
+-----
+---------HCLIB_RUNTIME_INFO-----------
+>>> HCLIB_WORKERS	= 20
+>>> HCLIB_HPT_FILE	= (null)
+>>> HCLIB_BIND_THREADS	= true
+WARNING: HCLIB_BIND_THREADS assign cores in round robin. E.g., setting HCLIB_WORKERS=12 on 2-socket node, each with 12 cores.
+>>> HCLIB_STATS		= 1
+----------------------------------------
+Using 20 worker threads (including main thread)
+HCLIB_INFO: Round Robin Thread Binding
+Starting Fib(40)..
+Fib(40) = 102334155
+============================ MMTk Statistics Totals ============================
+time.kernel	totalPush	totalSteals	tWork	tSearch	tIdle
+102.477	2178308	16130	99.47	0.53	0.00
+Total time: 103.116 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== TEST PASSED in 103.116 msec =====

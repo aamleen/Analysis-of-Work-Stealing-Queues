@@ -27,6 +27,7 @@ uname -v = #232-Ubuntu SMP Wed Jan 13 10:18:39 UTC 2021
 /usr/bin/oslevel       = unknown
 /bin/universe          = unknown
 
+PATH: /mnt/hdd2/home/aamleen2022/.vscode-server/bin/92da9481c0904c6adfe372c12da3b7748d74bdcb/bin/remote-cli
 PATH: /usr/local/sbin
 PATH: /usr/local/bin
 PATH: /usr/sbin
@@ -36,10 +37,6 @@ PATH: /bin
 PATH: /usr/games
 PATH: /usr/local/games
 PATH: /snap/bin
-PATH: /usr/local/java/bin
-PATH: /usr/local/hadoop/bin
-PATH: /usr/local/hadoop/sbin
-PATH: /usr/local/spark/bin
 
 
 ## ----------- ##
