@@ -1,7 +1,7 @@
-source /mnt/hdd2/home/aamleen2022/FenceFree_Deq/hclib-install/bin/hclib_setup_env.sh
+source /mnt/hdd2/home/aamleen2022/Original/hclib-iiitd/hclib-install/bin/hclib_setup_env.sh
 
 cd ./results
-rm *
+rm -rf *
 cd ..
 
 # declare variables

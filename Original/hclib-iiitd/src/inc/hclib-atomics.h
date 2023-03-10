@@ -59,6 +59,14 @@ static inline int _hclib_atomic_dec_relaxed(_Atomic int *target) {
     return atomic_fetch_sub_explicit(target, 1, memory_order_relaxed) - 1;
 }
 
+static inline int _hclib_atomic_dec_relaxed_long(_Atomic long long int *target) {
+    return atomic_fetch_sub_explicit(target, 1, memory_order_relaxed) - 1;
+}
+
+static inline int _hclib_atomic_inc_relaxed_long(_Atomic long long int *target) {
+    return atomic_fetch_add_explicit(target, 1, memory_order_relaxed) - 1;
+}
+
 static inline int _hclib_atomic_dec_release(_Atomic int *target) {
     return atomic_fetch_sub_explicit(target, 1, memory_order_release) - 1;
 }
