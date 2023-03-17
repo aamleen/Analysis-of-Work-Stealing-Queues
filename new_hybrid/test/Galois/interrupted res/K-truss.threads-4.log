@@ -1,0 +1,78 @@
+
+-----
+mkdir timedrun fake
+
+-----
+---------HCLIB_RUNTIME_INFO-----------
+>>> HCLIB_WORKERS	= 4
+>>> HCLIB_HPT_FILE	= (null)
+>>> HCLIB_BIND_THREADS	= true
+WARNING: HCLIB_BIND_THREADS assign cores in round robin. E.g., setting HCLIB_WORKERS=12 on 2-socket node, each with 12 cores.
+>>> HCLIB_STATS		= 1
+----------------------------------------
+Using 4 worker threads (including main thread)
+HCLIB_INFO: Round Robin Thread Binding
+
+Configurations: number of nodes- 15000,  k- 20, FACTOR- 16 
+starting kernel... 
+Computations done
+Total number of edges: 739923 
+Number of edges in k-truss: 0 
+============================ MMTk Statistics Totals ============================
+time.kernel	totalPush	totalSteals	tWork	tSearch	tIdle
+14549.377	82	7	99.58	0.41	0.01
+Total time: 18195.382 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== TEST PASSED in 18195.382 msec =====
+
+-----
+mkdir timedrun fake
+
+-----
+---------HCLIB_RUNTIME_INFO-----------
+>>> HCLIB_WORKERS	= 4
+>>> HCLIB_HPT_FILE	= (null)
+>>> HCLIB_BIND_THREADS	= true
+WARNING: HCLIB_BIND_THREADS assign cores in round robin. E.g., setting HCLIB_WORKERS=12 on 2-socket node, each with 12 cores.
+>>> HCLIB_STATS		= 1
+----------------------------------------
+Using 4 worker threads (including main thread)
+HCLIB_INFO: Round Robin Thread Binding
+
+Configurations: number of nodes- 15000,  k- 20, FACTOR- 16 
+starting kernel... 
+Computations done
+Total number of edges: 739923 
+Number of edges in k-truss: 0 
+============================ MMTk Statistics Totals ============================
+time.kernel	totalPush	totalSteals	tWork	tSearch	tIdle
+14566.648	82	7	99.61	0.38	0.01
+Total time: 18212.762 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== TEST PASSED in 18212.762 msec =====
+
+-----
+mkdir timedrun fake
+
+-----
+---------HCLIB_RUNTIME_INFO-----------
+>>> HCLIB_WORKERS	= 4
+>>> HCLIB_HPT_FILE	= (null)
+>>> HCLIB_BIND_THREADS	= true
+WARNING: HCLIB_BIND_THREADS assign cores in round robin. E.g., setting HCLIB_WORKERS=12 on 2-socket node, each with 12 cores.
+>>> HCLIB_STATS		= 1
+----------------------------------------
+Using 4 worker threads (including main thread)
+HCLIB_INFO: Round Robin Thread Binding
+
+Configurations: number of nodes- 15000,  k- 20, FACTOR- 16 
+starting kernel... 
+Computations done
+Total number of edges: 739923 
+Number of edges in k-truss: 0 
+============================ MMTk Statistics Totals ============================
+time.kernel	totalPush	totalSteals	tWork	tSearch	tIdle
+14605.952	82	7	99.62	0.37	0.01
+Total time: 18247.969 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== TEST PASSED in 18247.969 msec =====

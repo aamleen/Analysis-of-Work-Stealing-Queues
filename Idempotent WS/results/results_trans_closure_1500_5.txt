@@ -1,0 +1,25 @@
+
+-----
+mkdir timedrun fake
+
+-----
+---------HCLIB_RUNTIME_INFO-----------
+>>> HCLIB_WORKERS	= 20
+>>> HCLIB_HPT_FILE	= (null)
+>>> HCLIB_BIND_THREADS	= true
+WARNING: HCLIB_BIND_THREADS assign cores in round robin. E.g., setting HCLIB_WORKERS=12 on 2-socket node, each with 12 cores.
+>>> HCLIB_STATS		= 1
+----------------------------------------
+Using 20 worker threads (including main thread)
+HCLIB_INFO: Round Robin Thread Binding
+Launched hclib
+Starting Transitive Closure (1500)..
+Transitive closure matrix is 
+Done
+Kernel__Energy___ -->  736.729248
+============================ MMTk Statistics Totals ============================
+time.kernel	totalPush	totalSteals	tWork	tSearch	tIdle
+6063.936	2242506	87265	4.30	95.70	0.00
+Total time: 6078.458 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== TEST PASSED in 6078.458 msec =====

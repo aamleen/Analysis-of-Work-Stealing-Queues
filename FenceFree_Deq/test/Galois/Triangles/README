@@ -1,0 +1,18 @@
+Program counts the number of triangles in a (randomly generated) undirected graph.
+
+## To run Parallel:
+```
+$ make
+$ ./triangle_par -nbodies <problem_size>
+```
+
+## To run Sequential:
+```
+$ make
+$ ./triangle_ser -nbodies <problem_size>
+```
+
+
+### Default Values:
+`nbodies` = 1000
+ 

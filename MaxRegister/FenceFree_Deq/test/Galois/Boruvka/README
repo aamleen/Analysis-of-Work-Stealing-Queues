@@ -1,0 +1,21 @@
+Program to determine a maximal Independent Set in a given graph.
+
+## To run Parallel:
+```
+$ make
+$ ./independentset_par -nbodies <problem_size>
+```
+
+## To run Sequential:
+```
+$ make
+$ ./independentset_ser -nbodies <problem_size>
+```
+
+
+### Default Values:
+`nbodies` = 10000
+
+
+###### TODO: add option to read a file to process larger graph
+ 

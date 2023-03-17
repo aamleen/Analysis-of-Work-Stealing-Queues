@@ -1,0 +1,16 @@
+## To run Parallel:
+```
+$ make
+$ ./barnes_par -nbodies <problem_size>
+```
+
+## To run Sequential:
+```
+$ make
+$ ./barnes_ser -nbodies <problem_size>
+```
+
+
+### Default Values:
+`nbodies` = 100000
+ 

@@ -1,0 +1,8 @@
+targets.txt
+async*
+boot*
+deadlock*
+future*
+finish*
+forasync*
+!*.[ch]

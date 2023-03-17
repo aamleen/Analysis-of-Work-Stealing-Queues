@@ -1,0 +1,9 @@
+'master' branch of this repository is a fork of legacy-master branch in
+main HClib repository hosted at Rice account at github. However, unlike
+the main repo, here HCLIB_LITECTX_STRATEGY can be switched on/off successfully
+by commenting on/off the macro HCLIB_LITECTX_STRATEGY inside the file
+inc/hclib_common.h. 
+
+'cse502' branch of this repository is based on 'hcupc' branch of main
+repo of HClib. This cse502 branch is a toy implemetation and is easy to
+use by newbee, especially in course projects'
