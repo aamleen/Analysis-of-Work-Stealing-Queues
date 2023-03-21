@@ -25,6 +25,7 @@
 #include <hclib-hpt.h>
 #include <hclib-perfcounter.h>
 #include <hclib-timeline.h>
+#include <stdlib.h>
 
 int ff = 1;
 int delta = 2;
@@ -842,14 +843,18 @@ void* daemon_loop(void* args) {
 
   interval.tv_sec  =  0;
 
-  interval.tv_nsec = 1;
+  interval.tv_nsec = 100;
 
   // bind to last core, as the master thread always remain active on core-0
 
 //   bind_daemon_to_core();
     new_bind_on_cpu(31);
 
-
+    int S = 143;
+    int maxi = S/2;
+    int mini = 1;
+    int sleep_time = 100;
+    int prev_delta = 1;
 
   while(terminate == false) {
 
@@ -857,9 +862,7 @@ void* daemon_loop(void* args) {
 
     /* count tasks and append to list */
     // printf("QueueState: %lld", totalQueueState);
-    int S = 143;
-    int maxi = S/2;
-    int mini = 1;
+    
 
     // add to list
     arr = realloc(arr, sizeof(long long int) * (arr_size + 1));
@@ -879,7 +882,22 @@ void* daemon_loop(void* args) {
       } else if (delta < mini) {
         delta = mini;
       }
-      
+      if (prev_delta != delta) {
+        sleep_time = sleep_time - abs(delta - prev_delta)*10;
+      }
+      else
+        {
+            sleep_time = sleep_time + abs(delta - prev_delta)*10;
+        }
+        if (sleep_time < 0) {
+            sleep_time = 1;
+        }
+        if (sleep_time > 1000) {
+            sleep_time = 1000;
+        }
+        interval.tv_nsec = sleep_time;
+        prev_delta = delta;
+
       
     }
 
