@@ -16,11 +16,22 @@ BENCHMARKS=( "/BarnesHut/barnes_par" \
             "/Triangles/triangle_par" \
          )
 
-NAMES=( "PageRank_Residual" \
+NAMES=( "BarnesHut" \
+        "BetweennessCentrality" \
+        "BFS" \
+        "Boruvka" \
+        "ConnectedComponents" \
+        "IndependentSet" \
+        "K-core" \
+        "K-truss" \
+        "PageRank_Residual" \
         "PageRank_Topological" \
+        "PointsToAnalysis" \
+        "SSSP" \
+        "Triangles" \
         )
 
-GRAPH_PATH="../../graphs"
+GRAPH_PATH="/home/anuj2022/Analysis-of-Work-Stealing-Queues-FenceFreeWs/new_hybrid/test/Galois/graph"
 
 ARGS=( "-nbodies 1000000 -FACTOR 32" \
         "-nbodies 1500 -FACTOR 4" \
@@ -37,12 +48,12 @@ ARGS=( "-nbodies 1000000 -FACTOR 32" \
         "-file ${GRAPH_PATH}/rmat22.sym.egr -FACTOR 2" \
         )
 # Total number of times each benchmark should run in one setting
-ITERATIONS=4
+ITERATIONS=1
 # Total number of threads in each experiment across each build and across each benchmark
-THREADS=( 20 )
+THREADS=( 32 )
 
 export HCLIB_STATS=1
-export HCLIB_BIND_THREADS=true
+#export HCLIB_BIND_THREADS=1
 #############################################
 ######### NO MODIFICATIONS BELOW ############
 #############################################
@@ -56,17 +67,17 @@ launch() {
 	export HCLIB_WORKERS=$thread
 
 	for exe in "${NAMES[@]}"; do
-                FILE="./Results/${NAMES[$exe]}.threads-$thread.log"
-                chmod u+w $FILE
-                echo "" > $FILE
+                FILE="./Results/${NAMES[$exe]}_1000ns.threads-$thread.log"
+                  chmod u+w $FILE
+                  echo "" > $FILE
                 
 
 	done
         while [ $current_iteration -lt $ITERATIONS ]; do
             for exe in "${!BENCHMARKS[@]}"; do
-                FILE="./Results/${NAMES[$exe]}.threads-$thread.log"
+                FILE="./Results/${NAMES[$exe]}_1000ns.threads-$thread.log"
                     echo "Currently Running: $FILE "
-                    ./${BENCHMARKS[$exe]} ${ARGS[$exe]} 2>&1 | tee out
+                    ./${BENCHMARKS[$exe]} ${ARGS[$exe]} 2>&1 |  tee out
                     if [ `cat out | grep "TEST PASSED" | wc -l` -eq 0 ]; then
                         echo "ERROR: $FILE did not give Success. Not appending result..."
                     else

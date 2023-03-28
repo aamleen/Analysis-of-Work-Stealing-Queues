@@ -25,7 +25,6 @@
 #include <hclib-hpt.h>
 #include <hclib-perfcounter.h>
 #include <hclib-timeline.h>
-#include <stdlib.h>
 
 int ff = 1;
 int delta = 2;
@@ -35,6 +34,8 @@ int nanosleep(const struct timespec *req, struct timespec *rem);
 
 
 _Atomic long long int totalQueueState;
+_Atomic long long int globaltotalseals;
+_Atomic long long int totaltasks;
 
 static double benchmark_start_time_stats = 0;
 static double user_specified_timer = 0;
@@ -49,6 +50,7 @@ static int bind_threads = -1;
 static bool terminate;
 
 long long int* arr;
+long long int* arr_steal;
 long long int arr_size;
 
 void hclib_start_finish();
@@ -114,6 +116,8 @@ static void *worker_routine(void *args);
  */
 void hclib_global_init() {
     totalQueueState = 0;
+    totaltasks = 0;
+    globaltotalseals = 0;
     // Build queues
 
     hclib_context->hpt = read_hpt(&hclib_context->places,
@@ -276,6 +280,7 @@ static inline void rt_schedule_async(hclib_task_t *async_task,
 
     ws->total_push++;
     _hclib_atomic_inc_relaxed_long(&totalQueueState);
+    _hclib_atomic_inc_relaxed_long(&totaltasks);
     //atomic_fetch_add_explicit(&totalQueueState, 1, memory_order_relaxed);
     // push on worker deq
     if (async_task->place) {
@@ -387,6 +392,7 @@ void find_and_run_task(hclib_worker_state *ws) {
             if (task) {
 		hclib_log_event(ws->id, SUCCESS_STEALS);
 		ws->total_steals++;
+        globaltotalseals++;
         
                 MARK_BUSY(ws->id);
                 break;
@@ -574,6 +580,7 @@ static inline void slave_worker_finishHelper_routine(finish_t *finish) {
                 task = hpt_steal_task(ws);
                 if (task) {
                     ws->total_steals++;
+                    globaltotalseals++;
                     MARK_BUSY(ws->id);
                     break;
                 }
@@ -843,18 +850,16 @@ void* daemon_loop(void* args) {
 
   interval.tv_sec  =  0;
 
-  interval.tv_nsec = 100;
+  interval.tv_nsec = 1000;
 
   // bind to last core, as the master thread always remain active on core-0
 
 //   bind_daemon_to_core();
     new_bind_on_cpu(31);
 
-    int S = 143;
-    int maxi = S/2;
-    int mini = 1;
-    int sleep_time = 100;
-    int prev_delta = 1;
+    int flag = 0;
+
+
 
   while(terminate == false) {
 
@@ -862,11 +867,33 @@ void* daemon_loop(void* args) {
 
     /* count tasks and append to list */
     // printf("QueueState: %lld", totalQueueState);
+    int S = 143;
+    int maxi = S/2;
+    int mini = 1;
+
+    /* if(flag == 0 && totaltasks > 1000){
+        flag = 1;
+        double steal_ratio = ((double)globaltotalseals/(double)totaltasks)*100;
+
+        printf("Steal ratio: %f\n", steal_ratio);
+
+        if (steal_ratio < 0.01) {
+            interval.tv_nsec = 1;
+        } else if (steal_ratio < 1){
+            interval.tv_nsec = 10;
+        } else if (steal_ratio < 4){
+            interval.tv_nsec = 100;  
+        } else {
+            interval.tv_nsec = 1000;
+        }
+    } */
     
 
     // add to list
     arr = realloc(arr, sizeof(long long int) * (arr_size + 1));
+    arr_steal = realloc(arr_steal, sizeof(long long int) * (arr_size + 1));
     arr[arr_size] = totalQueueState;
+    arr_steal[arr_size] = globaltotalseals;
     arr_size++;
 
     // clock_gettime (CLOCK_MONOTONIC, &adaptTimeStop);
@@ -874,30 +901,14 @@ void* daemon_loop(void* args) {
     if ((interval.tv_sec > 0) || (interval.tv_nsec > 0)) {
 
       nanosleep (&interval, &remainder);
+        delta = totalQueueState/32;
+
+        if (delta > maxi) {
+            delta = maxi;
+        } else if (delta < mini) {
+            delta = mini;
+        }
       
-      delta = totalQueueState/32;
-
-      if (delta > maxi) {
-        delta = maxi;
-      } else if (delta < mini) {
-        delta = mini;
-      }
-      if (prev_delta != delta) {
-        sleep_time = sleep_time - abs(delta - prev_delta)*10;
-      }
-      else
-        {
-            sleep_time = sleep_time + abs(delta - prev_delta)*10;
-        }
-        if (sleep_time < 0) {
-            sleep_time = 1;
-        }
-        if (sleep_time > 1000) {
-            sleep_time = 1000;
-        }
-        interval.tv_nsec = sleep_time;
-        prev_delta = delta;
-
       
     }
 
@@ -937,6 +948,7 @@ void hclib_kernel(generic_frame_ptr fct_ptr, void *arg) {
  */
 static void hclib_init() {
     totalQueueState=0;
+    globaltotalseals=0;
     HASSERT(hclib_stats == NULL);
     HASSERT(bind_threads == -1);
     hclib_stats = getenv("HCLIB_STATS");
@@ -984,6 +996,10 @@ void dump(){
     for (int i = 0; i < arr_size; i++) {
         printf("%lld ", arr[i]);
     }
+    printf("Steal Dumping\n");
+    for (int i = 0; i < arr_size; i++) {
+        printf("%lld ", arr_steal[i]);
+    }
 }
 
 /**
@@ -1016,5 +1032,5 @@ void hclib_launch(generic_frame_ptr fct_ptr, void *arg) {
     fct_ptr(arg);
 #endif
     hclib_finalize();
-    // dump();
+    dump();
 }

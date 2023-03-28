@@ -1,0 +1,18 @@
+## To run Parallel:
+```
+$ make
+$ ./pagerank_par -nbodies <problem_size> -epsilon <tolerance> -alpha <teleportation parameter> -num_iters <number of iterations>
+```
+
+## To run Sequential:
+```
+$ make
+$ ./pagerank_ser -nbodies <problem_size> -epsilon <tolerance> -alpha <teleportation parameter> -num_iters <number of iterations>
+```
+
+
+### Default Values:
+`nbodies` = 10000
+`epsilon` = 1.0e-3
+`alpha` = 0.85 
+`num_iters` = 1000

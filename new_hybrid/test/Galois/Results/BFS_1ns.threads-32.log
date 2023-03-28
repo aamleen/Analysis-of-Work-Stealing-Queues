@@ -1,0 +1,25 @@
+
+-----
+mkdir timedrun fake
+
+-----
+---------HCLIB_RUNTIME_INFO-----------
+>>> HCLIB_WORKERS	= 32
+>>> HCLIB_HPT_FILE	= (null)
+>>> HCLIB_BIND_THREADS	= false
+>>> HCLIB_STATS		= 1
+----------------------------------------
+Using 32 worker threads (including main thread)
+
+Configurations: number of nodes- 403394, source- 0
+starting kernel.. 
+computations done 
+============================ MMTk Statistics Totals ============================
+time.kernel	totalPush	totalSteals	tWork	tSearch	tIdle
+21.494	15633	1375	74.77	25.20	0.03
+Total time: 45.671 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== TEST PASSED in 45.671 msec =====
+Starting Dumping
+6 101 96 96 98 102 106 106 100 98 92 93 92 93 81 82 76 79 84 100 80 93 82 82 77 74 74 75 73 72 57 69 63 50 46 49 44 40 37 28 21 24 4 0 0 164 135 121 102 103 98 89 87 78 78 98 85 73 72 59 35 0 91 101 84 91 71 58 61 39 0 93 71 56 41 10 20 15 0 8 2 Steal Dumping
+178 600 601 602 602 603 603 604 605 605 606 606 606 606 607 607 609 611 613 618 618 621 622 625 628 629 632 633 636 641 643 649 652 654 665 677 689 700 712 730 746 770 774 774 774 805 807 807 808 808 809 809 811 812 815 821 824 826 832 841 861 892 922 924 927 930 932 944 963 1005 1045 1076 1081 1092 1121 1148 1200 1262 1293 1337 1359 

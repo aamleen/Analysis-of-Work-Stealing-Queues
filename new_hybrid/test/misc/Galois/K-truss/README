@@ -1,0 +1,20 @@
+Program to find the maximal k-truss in a (randomly generated) undirected graph.
+A k-truss is the largest sub-graph of a graph such that each edge is contained in at least k-2 triangles within this subgraph.
+
+## To run Parallel:
+```
+$ make
+$ ./ktruss_par -nbodies <problem_size> -k <k>
+```
+
+## To run Sequential:
+```
+$ make
+$ ./ktruss_ser -nbodies <problem_size> -k <k>
+```
+
+
+### Default Values:
+`nbodies` = 1000
+`k` = 5
+ 
