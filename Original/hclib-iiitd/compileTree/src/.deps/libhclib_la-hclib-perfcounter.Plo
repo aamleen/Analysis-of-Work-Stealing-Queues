@@ -1,6 +1,0 @@
-libhclib_la-hclib-perfcounter.lo: ../../src/hclib-perfcounter.c \
- /usr/include/stdc-predef.h ../../inc/hclib-perfcounter.h
-
-/usr/include/stdc-predef.h:
-
-../../inc/hclib-perfcounter.h:

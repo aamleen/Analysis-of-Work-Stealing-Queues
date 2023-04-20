@@ -1,4 +1,0 @@
-make_x86_64_sysv_elf_gas.lo: \
- ../../src/fcontext/make_x86_64_sysv_elf_gas.S /usr/include/stdc-predef.h
-
-/usr/include/stdc-predef.h:
