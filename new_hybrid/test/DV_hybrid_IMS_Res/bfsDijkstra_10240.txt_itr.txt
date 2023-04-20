@@ -1,0 +1,105 @@
+
+-----
+mkdir timedrun fake
+
+-----
+---------HCLIB_RUNTIME_INFO-----------
+>>> HCLIB_WORKERS	= 32
+>>> HCLIB_HPT_FILE	= (null)
+>>> HCLIB_BIND_THREADS	= true
+WARNING: HCLIB_BIND_THREADS assign cores in round robin. E.g., setting HCLIB_WORKERS=12 on 2-socket node, each with 12 cores.
+>>> HCLIB_STATS		= 1
+----------------------------------------
+Using 32 worker threads (including main thread)
+HCLIB_INFO: Round Robin Thread Binding
+Start Time: 1681724914712721	 Finish Time: 1681724951248480	 Estimated Time: 36535759 usecs
+============================ MMTk Statistics Totals ============================
+time.kernel	totalPush	totalSteals	tWork	tSearch	tIdle
+36535.627	9198	2826	95.20	4.80	0.00
+Total time: 37568.031 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== TEST PASSED in 37568.031 msec =====
+
+-----
+mkdir timedrun fake
+
+-----
+---------HCLIB_RUNTIME_INFO-----------
+>>> HCLIB_WORKERS	= 32
+>>> HCLIB_HPT_FILE	= (null)
+>>> HCLIB_BIND_THREADS	= true
+WARNING: HCLIB_BIND_THREADS assign cores in round robin. E.g., setting HCLIB_WORKERS=12 on 2-socket node, each with 12 cores.
+>>> HCLIB_STATS		= 1
+----------------------------------------
+Using 32 worker threads (including main thread)
+HCLIB_INFO: Round Robin Thread Binding
+Start Time: 1681724955368612	 Finish Time: 1681724991872808	 Estimated Time: 36504196 usecs
+============================ MMTk Statistics Totals ============================
+time.kernel	totalPush	totalSteals	tWork	tSearch	tIdle
+36504.034	9198	2729	95.23	4.77	0.00
+Total time: 37548.920 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== TEST PASSED in 37548.920 msec =====
+
+-----
+mkdir timedrun fake
+
+-----
+---------HCLIB_RUNTIME_INFO-----------
+>>> HCLIB_WORKERS	= 32
+>>> HCLIB_HPT_FILE	= (null)
+>>> HCLIB_BIND_THREADS	= true
+WARNING: HCLIB_BIND_THREADS assign cores in round robin. E.g., setting HCLIB_WORKERS=12 on 2-socket node, each with 12 cores.
+>>> HCLIB_STATS		= 1
+----------------------------------------
+Using 32 worker threads (including main thread)
+HCLIB_INFO: Round Robin Thread Binding
+Start Time: 1681724995998218	 Finish Time: 1681725032570930	 Estimated Time: 36572712 usecs
+============================ MMTk Statistics Totals ============================
+time.kernel	totalPush	totalSteals	tWork	tSearch	tIdle
+36572.583	9198	2687	95.06	4.94	0.00
+Total time: 37621.495 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== TEST PASSED in 37621.495 msec =====
+
+-----
+mkdir timedrun fake
+
+-----
+---------HCLIB_RUNTIME_INFO-----------
+>>> HCLIB_WORKERS	= 32
+>>> HCLIB_HPT_FILE	= (null)
+>>> HCLIB_BIND_THREADS	= true
+WARNING: HCLIB_BIND_THREADS assign cores in round robin. E.g., setting HCLIB_WORKERS=12 on 2-socket node, each with 12 cores.
+>>> HCLIB_STATS		= 1
+----------------------------------------
+Using 32 worker threads (including main thread)
+HCLIB_INFO: Round Robin Thread Binding
+Start Time: 1681725036699900	 Finish Time: 1681725072643585	 Estimated Time: 35943685 usecs
+============================ MMTk Statistics Totals ============================
+time.kernel	totalPush	totalSteals	tWork	tSearch	tIdle
+35943.497	9198	2614	96.58	3.42	0.00
+Total time: 36986.204 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== TEST PASSED in 36986.204 msec =====
+
+-----
+mkdir timedrun fake
+
+-----
+---------HCLIB_RUNTIME_INFO-----------
+>>> HCLIB_WORKERS	= 32
+>>> HCLIB_HPT_FILE	= (null)
+>>> HCLIB_BIND_THREADS	= true
+WARNING: HCLIB_BIND_THREADS assign cores in round robin. E.g., setting HCLIB_WORKERS=12 on 2-socket node, each with 12 cores.
+>>> HCLIB_STATS		= 1
+----------------------------------------
+Using 32 worker threads (including main thread)
+HCLIB_INFO: Round Robin Thread Binding
+Start Time: 1681725076770801	 Finish Time: 1681725112789639	 Estimated Time: 36018838 usecs
+============================ MMTk Statistics Totals ============================
+time.kernel	totalPush	totalSteals	tWork	tSearch	tIdle
+36018.702	9198	2560	96.39	3.61	0.00
+Total time: 37031.609 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== TEST PASSED in 37031.609 msec =====

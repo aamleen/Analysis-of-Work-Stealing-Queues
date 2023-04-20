@@ -1,0 +1,105 @@
+
+-----
+mkdir timedrun fake
+
+-----
+---------HCLIB_RUNTIME_INFO-----------
+>>> HCLIB_WORKERS	= 32
+>>> HCLIB_HPT_FILE	= (null)
+>>> HCLIB_BIND_THREADS	= true
+WARNING: HCLIB_BIND_THREADS assign cores in round robin. E.g., setting HCLIB_WORKERS=12 on 2-socket node, each with 12 cores.
+>>> HCLIB_STATS		= 1
+----------------------------------------
+Using 32 worker threads (including main thread)
+HCLIB_INFO: Round Robin Thread Binding
+Start Time: 1681838356163510	 Finish Time: 1681838373211730	 Estimated Time: 17048220
+============================ MMTk Statistics Totals ============================
+time.kernel	totalPush	totalSteals	tWork	tSearch	tIdle
+17048.210	8188	1010	99.31	0.69	0.00
+Total time: 64266.299 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== TEST PASSED in 64266.299 msec =====
+
+-----
+mkdir timedrun fake
+
+-----
+---------HCLIB_RUNTIME_INFO-----------
+>>> HCLIB_WORKERS	= 32
+>>> HCLIB_HPT_FILE	= (null)
+>>> HCLIB_BIND_THREADS	= true
+WARNING: HCLIB_BIND_THREADS assign cores in round robin. E.g., setting HCLIB_WORKERS=12 on 2-socket node, each with 12 cores.
+>>> HCLIB_STATS		= 1
+----------------------------------------
+Using 32 worker threads (including main thread)
+HCLIB_INFO: Round Robin Thread Binding
+Start Time: 1681838425989453	 Finish Time: 1681838443267434	 Estimated Time: 17277981
+============================ MMTk Statistics Totals ============================
+time.kernel	totalPush	totalSteals	tWork	tSearch	tIdle
+17277.970	8188	1525	99.58	0.42	0.00
+Total time: 64307.450 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== TEST PASSED in 64307.450 msec =====
+
+-----
+mkdir timedrun fake
+
+-----
+---------HCLIB_RUNTIME_INFO-----------
+>>> HCLIB_WORKERS	= 32
+>>> HCLIB_HPT_FILE	= (null)
+>>> HCLIB_BIND_THREADS	= true
+WARNING: HCLIB_BIND_THREADS assign cores in round robin. E.g., setting HCLIB_WORKERS=12 on 2-socket node, each with 12 cores.
+>>> HCLIB_STATS		= 1
+----------------------------------------
+Using 32 worker threads (including main thread)
+HCLIB_INFO: Round Robin Thread Binding
+Start Time: 1681838496006939	 Finish Time: 1681838513503450	 Estimated Time: 17496511
+============================ MMTk Statistics Totals ============================
+time.kernel	totalPush	totalSteals	tWork	tSearch	tIdle
+17496.500	8188	1460	99.52	0.48	0.00
+Total time: 64496.123 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== TEST PASSED in 64496.123 msec =====
+
+-----
+mkdir timedrun fake
+
+-----
+---------HCLIB_RUNTIME_INFO-----------
+>>> HCLIB_WORKERS	= 32
+>>> HCLIB_HPT_FILE	= (null)
+>>> HCLIB_BIND_THREADS	= true
+WARNING: HCLIB_BIND_THREADS assign cores in round robin. E.g., setting HCLIB_WORKERS=12 on 2-socket node, each with 12 cores.
+>>> HCLIB_STATS		= 1
+----------------------------------------
+Using 32 worker threads (including main thread)
+HCLIB_INFO: Round Robin Thread Binding
+Start Time: 1681838566390956	 Finish Time: 1681838583490219	 Estimated Time: 17099263
+============================ MMTk Statistics Totals ============================
+time.kernel	totalPush	totalSteals	tWork	tSearch	tIdle
+17099.256	8188	1742	99.38	0.62	0.00
+Total time: 64228.508 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== TEST PASSED in 64228.508 msec =====
+
+-----
+mkdir timedrun fake
+
+-----
+---------HCLIB_RUNTIME_INFO-----------
+>>> HCLIB_WORKERS	= 32
+>>> HCLIB_HPT_FILE	= (null)
+>>> HCLIB_BIND_THREADS	= true
+WARNING: HCLIB_BIND_THREADS assign cores in round robin. E.g., setting HCLIB_WORKERS=12 on 2-socket node, each with 12 cores.
+>>> HCLIB_STATS		= 1
+----------------------------------------
+Using 32 worker threads (including main thread)
+HCLIB_INFO: Round Robin Thread Binding
+Start Time: 1681838636449497	 Finish Time: 1681838655489336	 Estimated Time: 19039839
+============================ MMTk Statistics Totals ============================
+time.kernel	totalPush	totalSteals	tWork	tSearch	tIdle
+19039.828	8188	1276	99.51	0.48	0.00
+Total time: 66259.651 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== TEST PASSED in 66259.651 msec =====

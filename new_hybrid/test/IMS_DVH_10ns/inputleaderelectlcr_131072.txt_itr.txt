@@ -1,0 +1,63 @@
+
+-----
+mkdir timedrun fake
+
+-----
+---------HCLIB_RUNTIME_INFO-----------
+>>> HCLIB_WORKERS	= 32
+>>> HCLIB_HPT_FILE	= (null)
+>>> HCLIB_BIND_THREADS	= true
+WARNING: HCLIB_BIND_THREADS assign cores in round robin. E.g., setting HCLIB_WORKERS=12 on 2-socket node, each with 12 cores.
+>>> HCLIB_STATS		= 1
+----------------------------------------
+Using 32 worker threads (including main thread)
+HCLIB_INFO: Round Robin Thread Binding
+Start Time: 1681930078262084	 Finish Time: 1681930312470831	 Estimated Time: 234208747
+============================ MMTk Statistics Totals ============================
+time.kernel	totalPush	totalSteals	tWork	tSearch	tIdle
+234208.659	1073479680	122846703	97.24	2.76	0.00
+Total time: 234236.612 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== TEST PASSED in 234236.612 msec =====
+
+-----
+mkdir timedrun fake
+
+-----
+---------HCLIB_RUNTIME_INFO-----------
+>>> HCLIB_WORKERS	= 32
+>>> HCLIB_HPT_FILE	= (null)
+>>> HCLIB_BIND_THREADS	= true
+WARNING: HCLIB_BIND_THREADS assign cores in round robin. E.g., setting HCLIB_WORKERS=12 on 2-socket node, each with 12 cores.
+>>> HCLIB_STATS		= 1
+----------------------------------------
+Using 32 worker threads (including main thread)
+HCLIB_INFO: Round Robin Thread Binding
+Start Time: 1681930317510193	 Finish Time: 1681930551096583	 Estimated Time: 233586390
+============================ MMTk Statistics Totals ============================
+time.kernel	totalPush	totalSteals	tWork	tSearch	tIdle
+233586.251	1073479680	121131298	97.38	2.62	0.00
+Total time: 233614.810 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== TEST PASSED in 233614.810 msec =====
+
+-----
+mkdir timedrun fake
+
+-----
+---------HCLIB_RUNTIME_INFO-----------
+>>> HCLIB_WORKERS	= 32
+>>> HCLIB_HPT_FILE	= (null)
+>>> HCLIB_BIND_THREADS	= true
+WARNING: HCLIB_BIND_THREADS assign cores in round robin. E.g., setting HCLIB_WORKERS=12 on 2-socket node, each with 12 cores.
+>>> HCLIB_STATS		= 1
+----------------------------------------
+Using 32 worker threads (including main thread)
+HCLIB_INFO: Round Robin Thread Binding
+Start Time: 1681930556132139	 Finish Time: 1681930790428407	 Estimated Time: 234296268
+============================ MMTk Statistics Totals ============================
+time.kernel	totalPush	totalSteals	tWork	tSearch	tIdle
+234296.161	1073479680	122115429	97.14	2.86	0.00
+Total time: 234321.150 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== TEST PASSED in 234321.150 msec =====

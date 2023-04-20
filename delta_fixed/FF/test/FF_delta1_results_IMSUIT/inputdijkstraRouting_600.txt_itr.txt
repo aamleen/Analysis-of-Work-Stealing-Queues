@@ -1,0 +1,105 @@
+
+-----
+mkdir timedrun fake
+
+-----
+---------HCLIB_RUNTIME_INFO-----------
+>>> HCLIB_WORKERS	= 32
+>>> HCLIB_HPT_FILE	= (null)
+>>> HCLIB_BIND_THREADS	= true
+WARNING: HCLIB_BIND_THREADS assign cores in round robin. E.g., setting HCLIB_WORKERS=12 on 2-socket node, each with 12 cores.
+>>> HCLIB_STATS		= 1
+----------------------------------------
+Using 32 worker threads (including main thread)
+HCLIB_INFO: Round Robin Thread Binding
+Start Time: 1681447162404939	 Finish Time: 1681447202142509	 Estimated Time: 39737570
+============================ MMTk Statistics Totals ============================
+time.kernel	totalPush	totalSteals	tWork	tSearch	tIdle
+39737.362	31	15	100.00	0.00	0.00
+Total time: 40135.410 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== TEST PASSED in 40135.410 msec =====
+
+-----
+mkdir timedrun fake
+
+-----
+---------HCLIB_RUNTIME_INFO-----------
+>>> HCLIB_WORKERS	= 32
+>>> HCLIB_HPT_FILE	= (null)
+>>> HCLIB_BIND_THREADS	= true
+WARNING: HCLIB_BIND_THREADS assign cores in round robin. E.g., setting HCLIB_WORKERS=12 on 2-socket node, each with 12 cores.
+>>> HCLIB_STATS		= 1
+----------------------------------------
+Using 32 worker threads (including main thread)
+HCLIB_INFO: Round Robin Thread Binding
+Start Time: 1681447207568205	 Finish Time: 1681447247428118	 Estimated Time: 39859913
+============================ MMTk Statistics Totals ============================
+time.kernel	totalPush	totalSteals	tWork	tSearch	tIdle
+39859.744	31	15	100.00	0.00	0.00
+Total time: 40222.276 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== TEST PASSED in 40222.276 msec =====
+
+-----
+mkdir timedrun fake
+
+-----
+---------HCLIB_RUNTIME_INFO-----------
+>>> HCLIB_WORKERS	= 32
+>>> HCLIB_HPT_FILE	= (null)
+>>> HCLIB_BIND_THREADS	= true
+WARNING: HCLIB_BIND_THREADS assign cores in round robin. E.g., setting HCLIB_WORKERS=12 on 2-socket node, each with 12 cores.
+>>> HCLIB_STATS		= 1
+----------------------------------------
+Using 32 worker threads (including main thread)
+HCLIB_INFO: Round Robin Thread Binding
+Start Time: 1681447252788561	 Finish Time: 1681447293735485	 Estimated Time: 40946924
+============================ MMTk Statistics Totals ============================
+time.kernel	totalPush	totalSteals	tWork	tSearch	tIdle
+40946.738	31	15	100.00	0.00	0.00
+Total time: 41263.993 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== TEST PASSED in 41263.993 msec =====
+
+-----
+mkdir timedrun fake
+
+-----
+---------HCLIB_RUNTIME_INFO-----------
+>>> HCLIB_WORKERS	= 32
+>>> HCLIB_HPT_FILE	= (null)
+>>> HCLIB_BIND_THREADS	= true
+WARNING: HCLIB_BIND_THREADS assign cores in round robin. E.g., setting HCLIB_WORKERS=12 on 2-socket node, each with 12 cores.
+>>> HCLIB_STATS		= 1
+----------------------------------------
+Using 32 worker threads (including main thread)
+HCLIB_INFO: Round Robin Thread Binding
+Start Time: 1681447299064488	 Finish Time: 1681447338867831	 Estimated Time: 39803343
+============================ MMTk Statistics Totals ============================
+time.kernel	totalPush	totalSteals	tWork	tSearch	tIdle
+39803.145	31	15	100.00	0.00	0.00
+Total time: 40172.526 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== TEST PASSED in 40172.526 msec =====
+
+-----
+mkdir timedrun fake
+
+-----
+---------HCLIB_RUNTIME_INFO-----------
+>>> HCLIB_WORKERS	= 32
+>>> HCLIB_HPT_FILE	= (null)
+>>> HCLIB_BIND_THREADS	= true
+WARNING: HCLIB_BIND_THREADS assign cores in round robin. E.g., setting HCLIB_WORKERS=12 on 2-socket node, each with 12 cores.
+>>> HCLIB_STATS		= 1
+----------------------------------------
+Using 32 worker threads (including main thread)
+HCLIB_INFO: Round Robin Thread Binding
+Start Time: 1681447344248552	 Finish Time: 1681447384299198	 Estimated Time: 40050646
+============================ MMTk Statistics Totals ============================
+time.kernel	totalPush	totalSteals	tWork	tSearch	tIdle
+40050.431	31	15	100.00	0.00	0.00
+Total time: 40402.149 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== TEST PASSED in 40402.149 msec =====

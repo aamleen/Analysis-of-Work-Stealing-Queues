@@ -1,0 +1,16 @@
+Program counts the number of connected components in a (randomly generated) undirected graph.
+
+## To run Parallel:
+```
+$ make
+$ ./labelPropagation_par -file <path_to_ECL_graph>
+```
+
+## To run Sequential:
+```
+$ make
+$ ./labelPropagation_ser -file <path_to_ECL_graph>
+```
+
+
+

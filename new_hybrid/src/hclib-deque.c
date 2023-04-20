@@ -46,7 +46,7 @@ hclib_task_t *deque_steal(deque_t *deq) {
     //int thiefid = rand();
     //prinntf("Stealing \n");
     // printf("%d %d\n", delta, ff);
-    while(true){
+    // while(true){
         head = deq->head;
         tail = deq->tail;
         if (head>=tail){
@@ -55,15 +55,36 @@ hclib_task_t *deque_steal(deque_t *deq) {
         } 
         // HCLIB START HERE
         if(tail-delta <= head){  
+            /* Cannot read deq->data[head] here
+            * Can happen that head=tail=0, then the owner of the deq pushes
+            * a new task when stealer is here in the code, resulting in head=0, tail=1
+            * All other checks down-below will be valid, but the old value of the buffer head
+            * would be returned by the steal rather than the new pushed value.
+            */
+
+            head = _hclib_atomic_load_relaxed(&deq->head);
+            // ATOMIC: load acquire
+            // We want all the writes from the producing thread to read the task data
+            // and we're using the tail as the synchronization variable
+            tail = _hclib_atomic_load_acquire(&deq->tail);
+            if ((tail - head) <= 0) {
+                return NULL;
+            }
+
+            hclib_task_t *t = deq->data[head % INIT_DEQUE_CAPACITY];
+            /* compete with other thieves and possibly the owner (if the size == 1) */
+            if (_hclib_atomic_cas_acq_rel(&deq->head, head, head + 1)) { /* competing */
+                return t;
+            }
             return NULL;
         }
         // HCLIB END HERE
         hclib_task_t *t = deq->data[head % INIT_DEQUE_CAPACITY];
         //prinntf("Task stolen by %d thief\n",thiefid);
         if (! _hclib_atomic_cas_acq_rel(&deq->head, head, head+1))
-            continue;
+            return NULL;
         return t;
-    }
+    // }
 }
 
 /*

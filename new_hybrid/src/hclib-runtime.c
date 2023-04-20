@@ -252,7 +252,6 @@ static inline void check_out_finish(finish_t *finish) {
 static inline void execute_task(hclib_task_t *task) {
     //atomic_fetch_sub_explicit(&totalQueueState, 1, memory_order_relaxed);
     
-    _hclib_atomic_dec_relaxed_long(&totalQueueState);
     finish_t *current_finish = task->current_finish;
     /*
      * Update the current finish of this worker to be inherited from the
@@ -266,6 +265,7 @@ static inline void execute_task(hclib_task_t *task) {
     (task->_fp)(task->args);
     check_out_finish(current_finish);
     free(task);
+    _hclib_atomic_dec_relaxed_long(&totalQueueState);
 }
 
 static inline void rt_schedule_async(hclib_task_t *async_task,
@@ -274,11 +274,11 @@ static inline void rt_schedule_async(hclib_task_t *async_task,
             async_task, async_task->place);
 
     ws->total_push++;
-    _hclib_atomic_inc_relaxed_long(&totalQueueState);
     //atomic_fetch_add_explicit(&totalQueueState, 1, memory_order_relaxed);
     // push on worker deq
     if (async_task->place) {
         deque_push_place(ws, async_task->place, async_task);
+        _hclib_atomic_inc_relaxed_long(&totalQueueState);
     } else {
         const int wid = get_current_worker();
         LOG_DEBUG("rt_schedule_async: scheduling on worker wid=%d "
@@ -289,6 +289,8 @@ static inline void rt_schedule_async(hclib_task_t *async_task,
             printf("WARNING: deque full, local execution\n");
             execute_task(async_task);
         }
+        else            
+            _hclib_atomic_inc_relaxed_long(&totalQueueState);
         LOG_DEBUG("rt_schedule_async: finished scheduling on worker wid=%d\n",
                 wid);
     }
@@ -857,9 +859,9 @@ void* daemon_loop(void* args) {
 
     /* count tasks and append to list */
     // printf("QueueState: %lld", totalQueueState);
-    int S = 143;
+    int S = 41;
     int maxi = S/2;
-    int mini = 1;
+    int mini = 2;
 
     // add to list
     arr = realloc(arr, sizeof(long long int) * (arr_size + 1));
@@ -872,14 +874,13 @@ void* daemon_loop(void* args) {
 
       nanosleep (&interval, &remainder);
       
-      delta = totalQueueState/32;
-
+      delta = totalQueueState/64;
+      
       if (delta > maxi) {
         delta = maxi;
       } else if (delta < mini) {
         delta = mini;
       }
-      
       
     }
 

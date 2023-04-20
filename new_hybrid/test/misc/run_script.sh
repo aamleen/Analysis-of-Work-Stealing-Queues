@@ -5,7 +5,12 @@ cd ../../
 source /home/anuj2022/Analysis-of-Work-Stealing-Queues-FenceFreeWs/new_hybrid/hclib-install/bin/hclib_setup_env.sh
 cd test/misc
 make
-
+cd ../IMSuite_BM/timing/iterative/parallel
+make clean
+make
+cd ../../recursive/parallel
+make clean
+make
 
 # cd ../Galois/BarnesHut
 # make clean
